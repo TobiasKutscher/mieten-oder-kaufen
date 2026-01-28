@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Methodik: Mieten oder Kaufen Rechner – So funktioniert der Vergleich</title>
+  <meta name="description" content="Erfahre, wie unser Mieten oder Kaufen Rechner funktioniert: Annahmen, Formeln, Opportunitätskosten, KESt-Berechnung und was der maximale Kaufpreis bedeutet." />
+  <meta name="keywords" content="mieten kaufen methodik, immobilien vergleich berechnung, opportunitätskosten immobilie, kaufnebenkosten österreich deutschland" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/methodik" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mieten-oder-kaufen.com/methodik" />
+  <meta property="og:title" content="Methodik: Mieten oder Kaufen Rechner – So funktioniert der Vergleich" />
+  <meta property="og:description" content="Erfahre, wie unser Mieten oder Kaufen Rechner funktioniert: Annahmen, Formeln und was der maximale Kaufpreis bedeutet." />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Methodik: Mieten oder Kaufen Rechner – So funktioniert der Vergleich",
+    "description": "Erfahre, wie unser Mieten oder Kaufen Rechner funktioniert: Annahmen, Formeln, Opportunitätskosten und was der maximale Kaufpreis bedeutet.",
+    "author": {
+      "@type": "Organization",
+      "name": "ByteBakery UG"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Mieten oder Kaufen Rechner"
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-15"
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f7f7f3;
+      --card: #ffffff;
+      --gray-100: #f0f0ec;
+      --gray-200: #e2e2de;
+      --gray-400: #999;
+      --gray-600: #666;
+      --green: #1a7f4b;
+      --radius: 12px;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --header-h: 54px;
+      --content-w: 800px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      height: var(--header-h);
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 100;
+    }
+    .header-logo {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .header-logo svg { opacity: 0.85; }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .header-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .header-nav a.active { color: #fff; background: rgba(255,255,255,0.12); }
+
+    .header-menu {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .header-menu-toggle svg { width: 20px; height: 20px; }
+
+    /* CONTAINER */
+    .container {
+      max-width: var(--content-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* CONTENT */
+    main {
+      padding: 48px 0 80px;
+    }
+
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a {
+      color: var(--gray-600);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+      max-width: 650px;
+    }
+
+    .content-section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--black);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--gray-600);
+    }
+
+    .content-section ul {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .content-section li {
+      margin-bottom: 8px;
+      color: var(--gray-600);
+    }
+
+    .info-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .info-card-title {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-400);
+      margin-bottom: 12px;
+    }
+
+    .formula-box {
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
+    .param-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .param-table th,
+    .param-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .param-table th {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+    .param-table td {
+      font-size: 0.85rem;
+    }
+    .param-table td:first-child {
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+
+    .cta-box {
+      background: var(--black);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .cta-box p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--black);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: transform 0.15s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1.5px solid var(--black);
+      padding: 24px 0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--black); }
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 560px) {
+      .container { padding: 0 20px; }
+      header {
+        position: relative;
+        height: auto;
+        padding: 8px 12px;
+      }
+      .header-menu-toggle { display: block; margin-left: auto; }
+      .header-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        padding: 10px 16px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .header-menu.open { display: flex; }
+      .header-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .header-nav a { width: 100%; padding: 8px 0; }
+      .param-table { font-size: 0.8rem; }
+      .param-table th, .param-table td { padding: 8px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="/" class="header-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Mieten vs. Kaufen
+    </a>
+    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
+    </button>
+    <div class="header-menu" id="headerMenu">
+      <nav class="header-nav">
+        <a href="/">Rechner</a>
+        <a href="/methodik" class="active">Methodik</a>
+        <a href="/faq">FAQ</a>
+        <a href="/glossar">Glossar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Startseite</a> → Methodik
+      </nav>
+
+      <h1>Methodik: So funktioniert der Mieten oder Kaufen Rechner</h1>
+      <p class="intro">
+        Unser Rechner vergleicht zwei Szenarien über einen Zeitraum von bis zu 30 Jahren:
+        Immobilie kaufen vs. zur Miete wohnen und das freie Kapital am Aktienmarkt anlegen.
+        Hier erfährst du, welche Annahmen und Formeln dahinterstecken.
+      </p>
+
+      <section class="content-section">
+        <h2>Das Grundprinzip</h2>
+        <p>
+          Die zentrale Frage lautet: Was ist mein Vermögen nach X Jahren wert – als Immobilienbesitzer
+          oder als Mieter, der sein Eigenkapital und die monatliche Ersparnis investiert?
+        </p>
+        <p>
+          Viele Menschen glauben, dass Miete „rausgeworfenes Geld" ist. Dabei übersehen sie, dass
+          auch Eigentümer laufende Kosten haben: Kreditzinsen, Instandhaltung, Kaufnebenkosten und
+          die sogenannten <strong>Opportunitätskosten</strong> – also den entgangenen Gewinn, weil
+          das Eigenkapital nicht am Aktienmarkt arbeiten kann.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Die Annahmen im Detail</h2>
+
+        <div class="info-card">
+          <div class="info-card-title">Standard-Parameter (Schnell-Modus)</div>
+          <table class="param-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Wert</th>
+                <th>Erklärung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Eigenkapital</td>
+                <td>20 %</td>
+                <td>Anteil vom Kaufpreis, den du selbst einbringst</td>
+              </tr>
+              <tr>
+                <td>Kaufnebenkosten</td>
+                <td>10 %</td>
+                <td>Grunderwerbsteuer, Notar, Makler, Grundbuch</td>
+              </tr>
+              <tr>
+                <td>Laufende Kosten</td>
+                <td>1 % p.a.</td>
+                <td>Instandhaltung, Rücklagen, Versicherung</td>
+              </tr>
+              <tr>
+                <td>Wertsteigerung Immobilie</td>
+                <td>2,6 % p.a.</td>
+                <td>Langfristiger Durchschnitt</td>
+              </tr>
+              <tr>
+                <td>Mieterhöhung</td>
+                <td>2,8 % p.a.</td>
+                <td>Jährliche Steigerung der Miete</td>
+              </tr>
+              <tr>
+                <td>Aktienrendite</td>
+                <td>7 % p.a.</td>
+                <td>Historischer MSCI World Durchschnitt</td>
+              </tr>
+              <tr>
+                <td>KESt (AT)</td>
+                <td>27,5 %</td>
+                <td>Kapitalertragsteuer in Österreich</td>
+              </tr>
+              <tr>
+                <td>KESt (DE)</td>
+                <td>26,375 %</td>
+                <td>Abgeltungssteuer inkl. Soli in Deutschland</td>
+              </tr>
+              <tr>
+                <td>Laufzeit</td>
+                <td>30 Jahre</td>
+                <td>Betrachtungszeitraum</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>Die Berechnung: Szenario Kaufen</h2>
+        <p>Beim Kaufen berechnen wir:</p>
+        <ul>
+          <li><strong>Kreditsumme:</strong> Kaufpreis + Kaufnebenkosten − Eigenkapital</li>
+          <li><strong>Monatliche Rate:</strong> Annuitätendarlehen über die Laufzeit</li>
+          <li><strong>Laufende Kosten:</strong> Jährlich 1 % des aktuellen Immobilienwerts</li>
+          <li><strong>Endvermögen:</strong> Immobilienwert nach Wertsteigerung</li>
+        </ul>
+
+        <div class="formula-box">
+          Endvermögen (Kaufen) = Kaufpreis × (1 + Wertsteigerung)^Jahre
+        </div>
+
+        <p>
+          Der <strong>Saldo</strong> ergibt sich aus: Endvermögen − Gesamtausgaben
+          (Eigenkapital + alle Kreditraten + laufende Kosten).
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Die Berechnung: Szenario Mieten + Investieren</h2>
+        <p>Beim Mieten + Investieren berechnen wir:</p>
+        <ul>
+          <li><strong>Startkapital:</strong> Dein Eigenkapital wird sofort investiert</li>
+          <li><strong>Monatliche Differenz:</strong> Kreditrate + laufende Kosten − Miete = Sparrate</li>
+          <li><strong>Portfolio:</strong> Wächst mit der Aktienrendite (z.B. 7 % p.a.)</li>
+          <li><strong>Steuern:</strong> Am Ende wird KESt auf die Kursgewinne abgezogen</li>
+        </ul>
+
+        <div class="formula-box">
+          Portfolio (nach Steuern) = Portfolio − (Portfolio − Investiertes) × KESt
+        </div>
+
+        <p>
+          Der <strong>Saldo</strong> ergibt sich aus: Portfolio nach Steuern − Gesamtausgaben
+          (investiertes Kapital + gezahlte Mieten).
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Was ist der maximale Kaufpreis?</h2>
+        <p>
+          Der maximale Kaufpreis (Break-Even) ist der Punkt, an dem beide Szenarien
+          zum gleichen Endvermögen führen. Bis zu diesem Preis lohnt sich Kaufen,
+          darüber ist Mieten + Investieren mathematisch vorteilhafter.
+        </p>
+        <p>
+          Wir berechnen diesen Punkt durch eine numerische Näherung (Bisektionsverfahren):
+          Wir suchen den Kaufpreis, bei dem die Differenz der Saldos genau null ist.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Warum kann der Saldo negativ sein?</h2>
+        <p>
+          Ein negativer Saldo bedeutet <strong>nicht</strong>, dass dein Depot oder deine Immobilie
+          einen negativen Wert hat. Der Saldo ist definiert als:
+        </p>
+        <div class="formula-box">
+          Saldo = Endvermögen − Gesamtausgaben
+        </div>
+        <p>
+          Wenn du z.B. 500.000 € ausgegeben hast und am Ende 450.000 € Vermögen hast,
+          ist der Saldo −50.000 €. Das zeigt nur, dass deine Ausgaben höher waren als
+          das Endergebnis – typisch bei hohen Mieten oder niedrigen Renditen.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>Was ist NICHT enthalten?</h2>
+        <p>Der Rechner berücksichtigt einige Faktoren vereinfacht oder gar nicht:</p>
+        <ul>
+          <li>Umzugskosten und Renovierung vor Einzug</li>
+          <li>Steuervorteile beim Kauf (z.B. AfA bei Vermietung)</li>
+          <li>Mietrendite bei Vermietung der Immobilie</li>
+          <li>Inflation (alle Werte sind nominal)</li>
+          <li>Risiko und Volatilität der Aktienmärkte</li>
+          <li>Emotionale Faktoren (Eigentum als Lebensgefühl)</li>
+        </ul>
+      </section>
+
+      <div class="cta-box">
+        <p>Bereit, deine Zahlen einzugeben?</p>
+        <a href="/" class="cta-btn">Zum Rechner →</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <nav class="footer-links">
+          <a href="/methodik">Methodik</a>
+          <a href="/faq">FAQ</a>
+          <a href="/glossar">Glossar</a>
+          <a href="/ueber-uns">Über uns</a>
+          <a href="/impressum">Impressum</a>
+        </nav>
+        <div class="footer-meta">
+          <span>© 2025 ByteBakery UG</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    var headerMenuToggle = document.getElementById("headerMenuToggle");
+    var headerMenu = document.getElementById("headerMenu");
+    if (headerMenuToggle && headerMenu) {
+      headerMenuToggle.addEventListener("click", function () {
+        headerMenu.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>

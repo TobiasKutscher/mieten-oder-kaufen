@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>FAQ: Mieten oder Kaufen – Häufige Fragen zum Immobilienvergleich</title>
+  <meta name="description" content="Antworten auf häufige Fragen zum Thema Mieten oder Kaufen: Wann lohnt sich Kaufen? Was sind Opportunitätskosten? Wie funktioniert der Rechner?" />
+  <meta name="keywords" content="mieten oder kaufen faq, immobilie kaufen fragen, wohnung kaufen oder mieten, kaufnebenkosten, kest, kapitalertragsteuer" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/faq" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mieten-oder-kaufen.com/faq" />
+  <meta property="og:title" content="FAQ: Mieten oder Kaufen – Häufige Fragen" />
+  <meta property="og:description" content="Antworten auf häufige Fragen zum Thema Mieten oder Kaufen." />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lohnt sich Mieten oder Kaufen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das hängt von individuellen Faktoren wie Kaufpreis, Miethöhe, Zinsniveau, Eigenkapital und alternativer Rendite ab. Unser Rechner vergleicht beide Optionen mathematisch exakt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der maximale Kaufpreis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der maximale Kaufpreis ist der Break-Even-Punkt: Bis zu diesem Preis lohnt sich Kaufen, darüber fährst du mit Miete + Kapitalanlage langfristig besser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was sind Opportunitätskosten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Opportunitätskosten sind entgangene Gewinne. Wenn du 80.000 € Eigenkapital in eine Immobilie steckst, kann dieses Geld nicht am Aktienmarkt arbeiten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie hoch sind die Kaufnebenkosten in Österreich?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Österreich betragen die Kaufnebenkosten ca. 10% des Kaufpreises: 3,5% Grunderwerbsteuer, 1,1% Grundbucheintragung, ca. 1-2% Notar und 3-4% Makler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist die KESt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Kapitalertragsteuer (KESt) wird auf Kursgewinne fällig. In Österreich 27,5%, in Deutschland 26,375% (inkl. Solidaritätszuschlag)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f7f7f3;
+      --card: #ffffff;
+      --gray-100: #f0f0ec;
+      --gray-200: #e2e2de;
+      --gray-400: #999;
+      --gray-600: #666;
+      --green: #1a7f4b;
+      --radius: 12px;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --header-h: 54px;
+      --content-w: 800px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      height: var(--header-h);
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 100;
+    }
+    .header-logo {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .header-logo svg { opacity: 0.85; }
+    .header-nav { display: flex; align-items: center; gap: 4px; }
+    .header-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .header-nav a.active { color: #fff; background: rgba(255,255,255,0.12); }
+    .header-menu { display: flex; align-items: center; gap: 12px; }
+    .header-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .header-menu-toggle svg { width: 20px; height: 20px; }
+
+    .container {
+      max-width: var(--content-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    main { padding: 48px 0 80px; }
+
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: var(--gray-600); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+      max-width: 650px;
+    }
+
+    .faq-category {
+      margin-bottom: 48px;
+    }
+    .faq-category-title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      text-align: left;
+    }
+    .faq-q .plus {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .faq-q.open .plus { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 0 0 20px;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .faq-a.open { display: block; }
+    .faq-a a { color: var(--black); }
+
+    .cta-box {
+      background: var(--black);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--black);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      border-top: 1.5px solid var(--black);
+      padding: 24px 0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--black); }
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 20px; }
+      header { position: relative; height: auto; padding: 8px 12px; }
+      .header-menu-toggle { display: block; margin-left: auto; }
+      .header-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        padding: 10px 16px 14px;
+        flex-direction: column;
+      }
+      .header-menu.open { display: flex; }
+      .header-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .header-nav a { width: 100%; padding: 8px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="header-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Mieten vs. Kaufen
+    </a>
+    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
+    </button>
+    <div class="header-menu" id="headerMenu">
+      <nav class="header-nav">
+        <a href="/">Rechner</a>
+        <a href="/methodik">Methodik</a>
+        <a href="/faq" class="active">FAQ</a>
+        <a href="/glossar">Glossar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <nav class="breadcrumb"><a href="/">Startseite</a> → FAQ</nav>
+
+      <h1>Häufige Fragen zum Mieten oder Kaufen Rechner</h1>
+      <p class="intro">
+        Hier findest du Antworten auf die wichtigsten Fragen rund um den Vergleich
+        von Mieten und Kaufen einer Immobilie.
+      </p>
+
+      <section class="faq-category">
+        <h2 class="faq-category-title">Grundlagen</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Lohnt sich Mieten oder Kaufen?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Das hängt von vielen individuellen Faktoren ab: Kaufpreis, Miethöhe, Zinsniveau,
+            dein Eigenkapital und die erwartete Rendite alternativer Anlagen. Unser Rechner
+            vergleicht beide Optionen mathematisch und zeigt dir, welche bei deinen Zahlen
+            vorteilhafter ist.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Ist Miete wirklich „rausgeworfenes Geld"?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Nein, das ist ein weit verbreiteter Irrtum. Als Eigentümer zahlst du Zinsen,
+            Kaufnebenkosten, Instandhaltung und hast Opportunitätskosten (entgangene Rendite
+            auf dein Eigenkapital). Diese Kosten sind oft höher als die Miete. Der Rechner
+            zeigt dir den genauen Vergleich.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Was ist der maximale Kaufpreis (Break-Even)?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Der maximale Kaufpreis ist der Punkt, an dem Kaufen und Mieten+Investieren zum
+            gleichen Endvermögen führen. Bis zu diesem Preis lohnt sich Kaufen, darüber ist
+            Mieten+Investieren mathematisch vorteilhafter. Er hängt von deiner Miete, den
+            Zinsen und der erwarteten Aktienrendite ab.
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category">
+        <h2 class="faq-category-title">Kosten & Steuern</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Wie hoch sind die Kaufnebenkosten in Österreich?<span class="plus">+</span></button>
+          <div class="faq-a">
+            In Österreich betragen die Kaufnebenkosten typischerweise ca. 10% des Kaufpreises:<br><br>
+            • Grunderwerbsteuer: 3,5%<br>
+            • Grundbucheintragung: 1,1%<br>
+            • Notarkosten: ca. 1-2%<br>
+            • Maklergebühr: ca. 3-4%
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Wie hoch sind die Kaufnebenkosten in Deutschland?<span class="plus">+</span></button>
+          <div class="faq-a">
+            In Deutschland variieren die Kaufnebenkosten je nach Bundesland (ca. 7-15%):<br><br>
+            • Grunderwerbsteuer: 3,5-6,5% (je nach Bundesland)<br>
+            • Notarkosten: ca. 1,5%<br>
+            • Grundbucheintragung: ca. 0,5%<br>
+            • Maklergebühr: ca. 3-7%
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Was ist die KESt / Kapitalertragsteuer?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Die Kapitalertragsteuer wird auf Kursgewinne fällig, wenn du Wertpapiere verkaufst.
+            In Österreich beträgt sie 27,5%, in Deutschland 26,375% (inkl. Solidaritätszuschlag).
+            Der Rechner berücksichtigt diese Steuer bei der Berechnung des Endvermögens.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Was sind laufende Kosten bei Eigentum?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Als Eigentümer hast du jährliche Kosten für:<br><br>
+            • Instandhaltungsrücklage (ca. 0,5-1% des Immobilienwerts)<br>
+            • Versicherungen (Gebäude, Hausrat)<br>
+            • Grundsteuer<br>
+            • Hausverwaltung (bei Eigentumswohnungen)<br><br>
+            Wir rechnen mit ca. 1% des Immobilienwerts pro Jahr als Richtwert.
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category">
+        <h2 class="faq-category-title">Rechner & Methodik</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Was sind Opportunitätskosten?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Opportunitätskosten sind entgangene Gewinne. Wenn du 80.000 € Eigenkapital in eine
+            Immobilie steckst, kann dieses Geld nicht am Aktienmarkt arbeiten. Bei 7% Rendite
+            wären das nach 30 Jahren über 500.000 € an entgangenem Gewinn. Der Rechner
+            berücksichtigt diese versteckten Kosten.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Warum kann der Saldo negativ sein?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Der Saldo ist definiert als: Endvermögen minus Gesamtausgaben. Ein negativer Wert
+            bedeutet nicht, dass dein Vermögen negativ ist – sondern dass deine Ausgaben höher
+            waren als das Endergebnis. Das ist typisch bei hohen Mieten oder niedrigen Renditen.
+            <a href="methodik.html">Mehr zur Methodik</a>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Welche Annahmen stecken im Rechner?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Im Schnell-Modus: 20% Eigenkapital, 10% Kaufnebenkosten, 1% laufende Kosten p.a.,
+            2,6% Immobilienwertsteigerung, 2,8% Mieterhöhung, 7% Aktienrendite und 30 Jahre
+            Laufzeit. Im Detailliert-Modus kannst du alle Parameter anpassen.
+            <a href="methodik.html">Alle Annahmen im Detail</a>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Ist der Rechner kostenlos?<span class="plus">+</span></button>
+          <div class="faq-a">
+            Ja, zu 100%. Das Projekt ist privat finanziert. Wir verkaufen keine Daten und
+            haben keine kommerziellen Interessen. Unser Ziel ist finanzielle Transparenz
+            bei der wichtigsten finanziellen Entscheidung deines Lebens.
+          </div>
+        </div>
+      </section>
+
+      <div class="cta-box">
+        <p>Noch Fragen? Probier den Rechner selbst aus!</p>
+        <a href="/" class="cta-btn">Zum Rechner →</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <nav class="footer-links">
+          <a href="/methodik">Methodik</a>
+          <a href="/faq">FAQ</a>
+          <a href="/glossar">Glossar</a>
+          <a href="/ueber-uns">Über uns</a>
+          <a href="/impressum">Impressum</a>
+        </nav>
+        <div class="footer-meta">© 2025 ByteBakery UG</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll(".faq-q").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("open");
+        this.nextElementSibling.classList.toggle("open");
+      });
+    });
+    var headerMenuToggle = document.getElementById("headerMenuToggle");
+    var headerMenu = document.getElementById("headerMenu");
+    if (headerMenuToggle && headerMenu) {
+      headerMenuToggle.addEventListener("click", function () {
+        headerMenu.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>

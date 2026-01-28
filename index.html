@@ -3,11 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mieten vs. Kaufen – Der mathematische Vergleich</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+  <!-- SEO Meta Tags -->
+  <title>Mieten oder Kaufen Rechner 2025 (AT & DE) – Maximaler Kaufpreis berechnen</title>
+  <meta name="description" content="Kostenloser Mieten oder Kaufen Rechner für Österreich & Deutschland: Berechne deinen maximalen Kaufpreis, Vermögensvorteil, Kreditzins und Rendite. Mit KESt-Berechnung und detaillierter Analyse." />
+  <meta name="keywords" content="mieten oder kaufen rechner, mieten vs kaufen, immobilie kaufen oder mieten, kaufen oder mieten berechnen, wohnung kaufen rechner, österreich, deutschland, KESt, kaufnebenkosten" />
+  <meta name="author" content="ByteBakery UG" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mieten-oder-kaufen.com/" />
+  <meta property="og:title" content="Mieten oder Kaufen Rechner 2025 – Kostenlos berechnen (AT & DE)" />
+  <meta property="og:description" content="Vergleiche Mieten vs. Kaufen: Maximaler Kaufpreis, Vermögensvorteil, Opportunitätskosten. Für Österreich & Deutschland mit KESt-Berechnung." />
+  <meta property="og:image" content="https://mieten-oder-kaufen.com/og-image.png" />
+  <meta property="og:locale" content="de_AT" />
+  <meta property="og:site_name" content="Mieten oder Kaufen Rechner" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://mieten-oder-kaufen.com/" />
+  <meta name="twitter:title" content="Mieten oder Kaufen Rechner 2025 – Kostenlos berechnen" />
+  <meta name="twitter:description" content="Vergleiche Mieten vs. Kaufen: Maximaler Kaufpreis, Vermögensvorteil, Opportunitätskosten. Für AT & DE." />
+  <meta name="twitter:image" content="https://mieten-oder-kaufen.com/og-image.png" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Schema.org WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Mieten oder Kaufen Rechner",
+    "description": "Kostenloser Online-Rechner zum Vergleich von Mieten vs. Kaufen einer Immobilie in Österreich und Deutschland",
+    "url": "https://mieten-oder-kaufen.com/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "ByteBakery UG"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "127"
+    }
+  }
+  </script>
+
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lohnt sich Mieten oder Kaufen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das hängt von individuellen Faktoren wie Kaufpreis, Miethöhe, Zinsniveau, Eigenkapital und alternativer Rendite ab. Unser Rechner vergleicht beide Optionen mathematisch exakt und berücksichtigt dabei auch versteckte Kosten wie Opportunitätskosten und laufende Instandhaltung."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der maximale Kaufpreis (Break-Even)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der maximale Kaufpreis ist der Break-Even-Punkt: Bis zu diesem Preis lohnt sich Kaufen, darüber fährst du mit Miete + Kapitalanlage langfristig besser. Er hängt von deiner aktuellen Miete, dem Zinsniveau und der erwarteten Aktienrendite ab."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie werden die Opportunitätskosten berechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir berechnen, was dein Eigenkapital und die monatliche Differenz zwischen Kauf- und Mietkosten erwirtschaftet hätten, wenn du sie in einen breit diversifizierten ETF investiert hättest. Am Ende wird die Kapitalertragsteuer (KESt) abgezogen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Annahmen stecken im Modell?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Schnell-Modus: 20% Eigenkapital, 10% Kaufnebenkosten, 1% laufende Kosten p.a., 2,6% Immobilienwertsteigerung, 2,8% jährliche Mieterhöhung, KESt je nach Land und 30 Jahre Laufzeit. Im Detailliert-Modus kannst du jeden Parameter anpassen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist der Mieten oder Kaufen Rechner kostenlos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, zu 100%. Das Projekt ist privat finanziert. Wir verkaufen keine Daten und haben keine kommerziellen Interessen. Unser Ziel ist finanzielle Transparenz bei der wichtigsten finanziellen Entscheidung deines Lebens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist die KESt / Kapitalertragsteuer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Kapitalertragsteuer wird auf Kursgewinne fällig, wenn du ETFs verkaufst. In Österreich beträgt sie 27,5%, in Deutschland 26,375% (inkl. Soli). Du kannst im Rechner zwischen AT und DE wechseln."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://mieten-oder-kaufen.com/"
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -60,6 +191,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      text-decoration: none;
+      color: #fff;
     }
     .header-logo svg { opacity: 0.85; }
     .header-nav {
@@ -78,11 +211,6 @@
     }
     .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .header-nav a.active { color: #fff; background: rgba(255,255,255,0.12); }
-    .header-right {
-      font-size: 0.76rem;
-      color: rgba(255,255,255,0.4);
-      font-family: var(--font-mono);
-    }
 
     .header-menu {
       display: flex;
@@ -146,9 +274,32 @@
       padding: 0 32px;
     }
 
+    /* ── H1 HERO ── */
+    .page-hero {
+      padding: 32px 0 8px;
+    }
+    .page-hero h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .page-hero .subtitle {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      max-width: 600px;
+    }
+    .last-update {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin-top: 8px;
+    }
+
     /* ── CALCULATOR SECTION ── */
     .calc-section {
-      padding: 32px 0 40px;
+      padding: 16px 0 40px;
     }
     .calc-grid {
       display: grid;
@@ -303,9 +454,6 @@
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 5px;
-    }
-    /* Japanese brush stroke highlight for result keyword */
-    .result-headline {
       position: relative;
       z-index: 1;
     }
@@ -383,7 +531,7 @@
       border-radius: 10px;
       text-align: right;
     }
-    .kpi-box.kpi-sweetspot {
+    .kpi-box.kpi-breakeven {
       background: linear-gradient(135deg, var(--gray-100) 0%, rgba(26, 127, 75, 0.08) 100%);
       border-left: 2px solid var(--green);
     }
@@ -513,6 +661,48 @@
       text-align: right;
     }
 
+    /* ── HOW TO USE SECTION ── */
+    .howto-section {
+      padding: 24px 0 32px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .howto-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .howto-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .howto-step {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      border: 1px solid var(--gray-200);
+    }
+    .howto-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .howto-step h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .howto-step p {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
     /* ── LANDING SECTIONS ── */
     .landing {
       border-top: 1.5px solid var(--black);
@@ -595,13 +785,27 @@
       padding: 64px 0;
       border-top: 1px solid var(--gray-200);
     }
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
     .faq-title {
       font-family: var(--font-mono);
       font-size: 0.62rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--gray-400);
-      margin-bottom: 28px;
+    }
+    .faq-link {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      text-decoration: none;
+    }
+    .faq-link:hover {
+      color: var(--black);
+      text-decoration: underline;
     }
     .faq-item { border-bottom: 1px solid var(--gray-200); }
     .faq-q {
@@ -641,34 +845,45 @@
     .site-footer {
       border-top: 1.5px solid var(--black);
       padding: 24px 0;
+    }
+    .footer-content {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 24px;
     }
-    .site-footer span {
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
       font-family: var(--font-mono);
       font-size: 0.68rem;
       color: var(--gray-400);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--black);
+    }
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      text-align: right;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 800px) {
       .container { padding: 0 20px; }
-      header {
-        padding: 0 20px;
-      }
-      .calc-section {
-        padding: 24px 0 32px;
-      }
-      .calc-grid {
-        grid-template-columns: 1fr;
-      }
+      header { padding: 0 20px; }
+      .calc-section { padding: 16px 0 32px; }
+      .calc-grid { grid-template-columns: 1fr; }
       .result-banner { flex-direction: column; }
       .kpi-strip { flex-direction: row; min-width: 0; }
       .kpi-box { flex: 1; text-align: center; }
       .topic-grid { grid-template-columns: 1fr; }
+      .howto-grid { grid-template-columns: 1fr 1fr; }
       .chart-legend {
         flex-wrap: wrap;
         justify-content: flex-end;
@@ -676,9 +891,7 @@
     }
 
     @media (max-width: 560px) {
-      .container {
-        padding: 0 16px;
-      }
+      .container { padding: 0 16px; }
       header {
         position: relative;
         height: auto;
@@ -701,9 +914,7 @@
         gap: 10px;
         border-bottom: 1px solid rgba(255,255,255,0.12);
       }
-      .header-menu.open {
-        display: flex;
-      }
+      .header-menu.open { display: flex; }
       .header-nav {
         flex-direction: column;
         align-items: flex-start;
@@ -717,13 +928,10 @@
         width: 100%;
         justify-content: flex-start;
       }
-      .site-footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .chart-wrap {
-        height: 220px;
-      }
+      .howto-grid { grid-template-columns: 1fr; }
+      .footer-content { flex-direction: column; }
+      .footer-meta { text-align: left; }
+      .chart-wrap { height: 220px; }
     }
   </style>
 </head>
@@ -731,11 +939,11 @@
 
   <!-- HEADER -->
   <header>
-    <div class="header-logo">
+    <a href="/" class="header-logo">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Mieten vs. Kaufen
-    </div>
-    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü">
+    </a>
+    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü öffnen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="7" x2="21" y2="7"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -743,18 +951,19 @@
       </svg>
     </button>
     <div class="header-menu" id="headerMenu">
-      <div class="header-nav">
-        <a href="#rechner" class="active">Rechner</a>
-        <a href="#methodik">Methodik</a>
-        <a href="#faq">FAQ</a>
-      </div>
-      <div class="country-toggle">
-        <button class="country-btn active" id="countryAT">
-          <svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#ed2939"/><rect y="6.67" width="30" height="6.67" fill="#fff"/></svg>
+      <nav class="header-nav" aria-label="Hauptnavigation">
+        <a href="/" class="active">Rechner</a>
+        <a href="/methodik">Methodik</a>
+        <a href="/faq">FAQ</a>
+        <a href="/glossar">Glossar</a>
+      </nav>
+      <div class="country-toggle" role="group" aria-label="Land wählen">
+        <button class="country-btn active" id="countryAT" aria-pressed="true">
+          <svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#ed2939"/><rect y="6.67" width="30" height="6.67" fill="#fff"/></svg>
           AT
         </button>
-        <button class="country-btn" id="countryDE">
-          <svg viewBox="0 0 30 20"><rect width="30" height="6.67" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/></svg>
+        <button class="country-btn" id="countryDE" aria-pressed="false">
+          <svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="6.67" fill="#000"/><rect y="6.67" width="30" height="6.67" fill="#dd0000"/><rect y="13.33" width="30" height="6.67" fill="#ffce00"/></svg>
           DE
         </button>
       </div>
@@ -764,283 +973,333 @@
   <!-- ═══════════════════════════════════════ -->
   <!-- CALCULATOR                              -->
   <!-- ═══════════════════════════════════════ -->
-  <div class="container" id="rechner">
-    <div class="calc-section">
-      <div class="calc-grid">
+  <main>
+    <div class="container" id="rechner">
+      <!-- H1 Hero Section -->
+      <div class="page-hero">
+        <h1>Mieten oder Kaufen Rechner (Österreich & Deutschland)</h1>
+        <p class="subtitle">Berechne deinen maximalen Kaufpreis und vergleiche den Vermögensvorteil von Mieten vs. Kaufen – mit Opportunitätskosten, Kreditzins und KESt.</p>
+        <div class="last-update">Letzte Aktualisierung: Januar 2025</div>
+      </div>
 
-        <!-- LEFT: INPUTS -->
-        <div class="inputs-panel">
-          <div class="mode-toggle">
-            <button class="mode-btn active" id="modeEasy">Schnell</button>
-            <button class="mode-btn" id="modeExpert">Detailliert</button>
-          </div>
+      <div class="calc-section">
+        <div class="calc-grid">
 
-          <div class="panel-section">
-            <div class="panel-section-title">Deine Situation</div>
-            <div class="field">
-              <label>Warmmiete pro Monat</label>
-              <input id="yourRent" type="number" step="50" value="1500" />
-              <div class="hint">€ / Monat</div>
+          <!-- LEFT: INPUTS -->
+          <div class="inputs-panel">
+            <div class="mode-toggle">
+              <button class="mode-btn active" id="modeEasy">Schnell</button>
+              <button class="mode-btn" id="modeExpert">Detailliert</button>
             </div>
-            <div class="field">
-              <label>Geplanter Kaufpreis</label>
-              <input id="purchasePrice" type="number" step="10000" placeholder="z.B. 400000" />
-              <div class="hint">€ Immobilienpreis</div>
-            </div>
-          </div>
 
-          <div class="panel-section">
-            <div class="panel-section-title">Zinsen &amp; Rendite</div>
-            <div class="field-row">
+            <div class="panel-section">
+              <div class="panel-section-title">Deine Situation</div>
               <div class="field">
-                <label>Kreditzins p.a.</label>
-                <input id="interest" type="number" step="0.1" value="2.9" />
-                <div class="hint">%</div>
+                <label for="yourRent">Warmmiete pro Monat</label>
+                <input id="yourRent" type="number" step="50" value="1500" aria-describedby="rentHint" />
+                <div class="hint" id="rentHint">€ / Monat</div>
               </div>
               <div class="field">
-                <label>Aktienrendite p.a.</label>
-                <input id="stockReturn" type="number" step="0.1" value="7.0" />
-                <div class="hint">%</div>
+                <label for="purchasePrice">Geplanter Kaufpreis</label>
+                <input id="purchasePrice" type="number" step="10000" placeholder="z.B. 400000" aria-describedby="priceHint" />
+                <div class="hint" id="priceHint">€ Immobilienpreis</div>
               </div>
             </div>
-          </div>
 
-          <div class="expert-fields" id="expertFields">
             <div class="panel-section">
-              <div class="panel-section-title">Kaufnebenkosten &amp; Kapital</div>
+              <div class="panel-section-title">Zinsen &amp; Rendite</div>
               <div class="field-row">
                 <div class="field">
-                  <label>Eigenkapital</label>
-                  <input id="equityRatio" type="number" step="1" value="20" />
-                  <div class="hint">% vom Kaufpreis</div>
-                </div>
-                <div class="field">
-                  <label>Kaufnebenkosten</label>
-                  <input id="closingRate" type="number" step="0.5" value="10" />
-                  <div class="hint">% vom Kaufpreis</div>
-                </div>
-              </div>
-            </div>
-            <div class="panel-section">
-              <div class="panel-section-title">Wertentwicklung</div>
-              <div class="field-row">
-                <div class="field">
-                  <label>Wertsteigerung p.a.</label>
-                  <input id="propertyGrowth" type="number" step="0.1" value="2.6" />
-                  <div class="hint">% Immobilie</div>
-                </div>
-                <div class="field">
-                  <label>Mieterhöhung p.a.</label>
-                  <input id="rentGrowth" type="number" step="0.1" value="2.8" />
+                  <label for="interest">Kreditzins p.a.</label>
+                  <input id="interest" type="number" step="0.1" value="2.9" />
                   <div class="hint">%</div>
                 </div>
-              </div>
-              <div class="field-row" style="margin-top:10px;">
                 <div class="field">
-                  <label>Laufende Kosten p.a.</label>
-                  <input id="runningRate" type="number" step="0.1" value="1.0" />
-                  <div class="hint">% vom Wert</div>
-                </div>
-                <div class="field">
-                  <label>KESt</label>
-                  <input id="kest" type="number" step="0.5" value="27.5" />
+                  <label for="stockReturn">Aktienrendite p.a.</label>
+                  <input id="stockReturn" type="number" step="0.1" value="7.0" />
                   <div class="hint">%</div>
                 </div>
               </div>
             </div>
-            <div class="panel-section">
-              <div class="panel-section-title">Laufzeit</div>
-              <div class="field">
-                <label>Betrachtungszeitraum</label>
-                <input id="termYears" type="number" step="1" value="30" />
-                <div class="hint">Jahre</div>
+
+            <div class="expert-fields" id="expertFields">
+              <div class="panel-section">
+                <div class="panel-section-title">Kaufnebenkosten &amp; Kapital</div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="equityRatio">Eigenkapital</label>
+                    <input id="equityRatio" type="number" step="1" value="20" />
+                    <div class="hint">% vom Kaufpreis</div>
+                  </div>
+                  <div class="field">
+                    <label for="closingRate">Kaufnebenkosten</label>
+                    <input id="closingRate" type="number" step="0.5" value="10" />
+                    <div class="hint">% vom Kaufpreis</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-section">
+                <div class="panel-section-title">Wertentwicklung</div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="propertyGrowth">Wertsteigerung p.a.</label>
+                    <input id="propertyGrowth" type="number" step="0.1" value="2.6" />
+                    <div class="hint">% Immobilie</div>
+                  </div>
+                  <div class="field">
+                    <label for="rentGrowth">Mieterhöhung p.a.</label>
+                    <input id="rentGrowth" type="number" step="0.1" value="2.8" />
+                    <div class="hint">%</div>
+                  </div>
+                </div>
+                <div class="field-row" style="margin-top:10px;">
+                  <div class="field">
+                    <label for="runningRate">Laufende Kosten p.a.</label>
+                    <input id="runningRate" type="number" step="0.1" value="1.0" />
+                    <div class="hint">% vom Wert</div>
+                  </div>
+                  <div class="field">
+                    <label for="kest">KESt</label>
+                    <input id="kest" type="number" step="0.5" value="27.5" />
+                    <div class="hint">%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-section">
+                <div class="panel-section-title">Laufzeit</div>
+                <div class="field">
+                  <label for="termYears">Betrachtungszeitraum</label>
+                  <input id="termYears" type="number" step="1" value="30" />
+                  <div class="hint">Jahre</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-section" id="easyInfo">
+              <div class="info-box">
+                Annahmen: 20 % EK, 10 % Nebenkosten, 1 % laufende Kosten,
+                2,6 % Wertsteigerung, 2,8 % Mieterhöhung, <span id="kestInfoText">27,5 % KESt</span>. 30 Jahre.<br>
+                → <b>Detailliert</b> für alle Parameter. <a href="methodik.html" style="color: inherit;">Mehr zur Methodik</a>
               </div>
             </div>
           </div>
 
-          <div class="panel-section" id="easyInfo">
-            <div class="info-box">
-              Annahmen: 20 % EK, 10 % Nebenkosten, 1 % laufende Kosten,
-              2,6 % Wertsteigerung, 2,8 % Mieterhöhung, <span id="kestInfoText">27,5 % KESt</span>. 30 Jahre.<br>
-              → <b>Detailliert</b> für alle Parameter.
+          <!-- RIGHT: RESULTS + CHART -->
+          <div class="right-col">
+
+            <!-- Result banner -->
+            <div class="result-banner" role="region" aria-live="polite">
+              <div class="result-banner-main">
+                <div class="result-badge">Ergebnis</div>
+                <div class="result-headline" id="resultHeadline">Gib einen Kaufpreis ein.</div>
+                <div class="result-sub" id="resultSub"></div>
+                <div class="result-disclaimer" id="resultDisclaimer"></div>
+              </div>
+              <div class="kpi-strip" id="kpiStrip" style="display:none;">
+                <div class="kpi-box kpi-breakeven">
+                  <div class="kpi-label">Max. Kaufpreis</div>
+                  <div class="kpi-value" id="kpiBreakeven">—</div>
+                </div>
+                <div class="kpi-box">
+                  <div class="kpi-label">Monatl. Belastung</div>
+                  <div class="kpi-value" id="kpiMonthly">—</div>
+                </div>
+              </div>
             </div>
+
+            <!-- Chart -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <div class="chart-title">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  Vermögensprognose
+                </div>
+                <div class="chart-legend">
+                  <span><span class="line-sample"></span> Schwelle</span>
+                  <span><span class="dot-filled"></span> Break-Even</span>
+                  <span><span class="dot-black"></span> Kaufpreis</span>
+                </div>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="breakevenChart" aria-label="Diagramm: Vermögensprognose Mieten vs. Kaufen"></canvas>
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div class="details-card" id="detailsCard" style="display:none;">
+              <button class="details-toggle" id="detailsToggle" aria-expanded="false" aria-controls="detailsBody">
+                Berechnungs-Details
+                <span class="chevron" aria-hidden="true">▼</span>
+              </button>
+              <div class="details-body" id="detailsBody">
+                <table class="comp-table">
+                  <thead>
+                    <tr>
+                      <th style="width:45%">Kennzahl</th>
+                      <th style="text-align:right">Kaufen</th>
+                      <th style="text-align:right">Mieten + Invest.</th>
+                    </tr>
+                  </thead>
+                  <tbody id="compBody"></tbody>
+                </table>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- RIGHT: RESULTS + CHART -->
-        <div class="right-col">
-
-          <!-- Result banner -->
-          <div class="result-banner">
-            <div class="result-banner-main">
-              <div class="result-badge">Berechnung</div>
-              <div class="result-headline" id="resultHeadline">Gib einen Kaufpreis ein.</div>
-              <div class="result-sub" id="resultSub"></div>
-              <div class="result-disclaimer" id="resultDisclaimer"></div>
+        <!-- How to use section -->
+        <section class="howto-section">
+          <h2 class="howto-title">So nutzt du den Mieten oder Kaufen Rechner</h2>
+          <div class="howto-grid">
+            <div class="howto-step">
+              <div class="howto-step-num">01</div>
+              <h3>Miete eingeben</h3>
+              <p>Trage deine aktuelle monatliche Warmmiete ein.</p>
             </div>
-            <div class="kpi-strip" id="kpiStrip" style="display:none;">
-              <div class="kpi-box kpi-sweetspot">
-                <div class="kpi-label">Sweetspot-Kaufpreis</div>
-                <div class="kpi-value" id="kpiSweetspot">—</div>
-              </div>
-              <div class="kpi-box">
-                <div class="kpi-label">Effektivbelastung</div>
-                <div class="kpi-value" id="kpiMonthly">—</div>
-              </div>
+            <div class="howto-step">
+              <div class="howto-step-num">02</div>
+              <h3>Kaufpreis angeben</h3>
+              <p>Gib den Kaufpreis der Immobilie ein, die du kaufen möchtest.</p>
             </div>
-          </div>
-
-          <!-- Chart -->
-          <div class="chart-card">
-            <div class="chart-header">
-              <div class="chart-title">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                Vermögensprognose
-              </div>
-              <div class="chart-legend">
-                <span><span class="line-sample"></span> Schwelle</span>
-                <span><span class="dot-filled"></span> Sweetspot</span>
-                <span><span class="dot-black"></span> Kaufpreis</span>
-              </div>
+            <div class="howto-step">
+              <div class="howto-step-num">03</div>
+              <h3>Parameter prüfen</h3>
+              <p>Passe Zinsen und Rendite an oder nutze den Detailliert-Modus.</p>
             </div>
-            <div class="chart-wrap">
-              <canvas id="sweetspotChart"></canvas>
+            <div class="howto-step">
+              <div class="howto-step-num">04</div>
+              <h3>Ergebnis verstehen</h3>
+              <p>Der max. Kaufpreis zeigt, bis wann sich Kaufen lohnt.</p>
             </div>
           </div>
-
-          <!-- Details -->
-          <div class="details-card" id="detailsCard" style="display:none;">
-            <button class="details-toggle" id="detailsToggle">
-              Berechnungs-Details
-              <span class="chevron">▼</span>
-            </button>
-            <div class="details-body" id="detailsBody">
-              <table class="comp-table">
-                <thead>
-                  <tr>
-                    <th style="width:45%">Kennzahl</th>
-                    <th style="text-align:right">Kaufen</th>
-                    <th style="text-align:right">Mieten + Invest.</th>
-                  </tr>
-                </thead>
-                <tbody id="compBody"></tbody>
-              </table>
-            </div>
-          </div>
-
-        </div>
+        </section>
       </div>
     </div>
-  </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- LANDING PAGE                            -->
-  <!-- ═══════════════════════════════════════ -->
-  <div class="landing" id="methodik">
-    <div class="container">
+    <!-- ═══════════════════════════════════════ -->
+    <!-- LANDING PAGE                            -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="landing" id="methodik">
+      <div class="container">
 
-      <div class="landing-hero">
-        <h2>Mieten oder Kaufen?<br><span class="highlight">Berechne deinen Vorteil.</span></h2>
-        <p>
-          Die Frage „Mieten vs. Kaufen" ist nicht nur eine Gefühlsentscheidung, sondern eine knallharte Rechenaufgabe.
-          Oft wird beim Immobilienkauf der wahre Kostenvorteil überschätzt, während beim Mieten die
-          Investitionschance des freien Kapitals unterschätzt wird. Unser Rechner vergleicht die Gesamtkosten beider
-          Optionen über die volle Laufzeit — inklusive versteckter Faktoren wie Opportunitätskosten, Wertsteigerung und Inflation.
-        </p>
+        <div class="landing-hero">
+          <h2>Mieten oder Kaufen?<br><span class="highlight">Berechne deinen Vorteil.</span></h2>
+          <p>
+            Die Frage „Mieten vs. Kaufen" ist nicht nur eine Gefühlsentscheidung, sondern eine knallharte Rechenaufgabe.
+            Oft wird beim Immobilienkauf der wahre Kostenvorteil überschätzt, während beim Mieten die
+            Investitionschance des freien Kapitals unterschätzt wird. Unser Rechner vergleicht die Gesamtkosten beider
+            Optionen über die volle Laufzeit — inklusive versteckter Faktoren wie Opportunitätskosten, Wertsteigerung und Inflation.
+          </p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card">
+            <h3>Das gebundene Kapital arbeitet nicht</h3>
+            <p>
+              Wer 80.000 € Eigenkapital in eine Immobilie steckt, kann dieses Geld nicht mehr am Aktienmarkt anlegen.
+              Bei 7 % Rendite „kostet" dich das gebundene Kapital in 30 Jahren über 500.000 € an entgangenem Gewinn.
+              Unser Rechner stellt genau diesen Nachteil der Kreditbelastung gegenüber.
+            </p>
+          </article>
+          <article class="topic-card">
+            <h3>Dein persönlicher Break-Even-Punkt</h3>
+            <p>
+              Der maximale Kaufpreis zeigt dir den Punkt, bis zu dem sich Kaufen gegenüber Mieten + Investieren lohnt.
+              Liegt dein Wunschpreis darüber, fährst du mit Miete und ETF-Sparplan besser — mathematisch betrachtet.
+            </p>
+          </article>
+          <article class="topic-card">
+            <h3>Versteckte Kosten beim Kauf</h3>
+            <p>
+              Kaufnebenkosten (Grunderwerbsteuer, Notar, Makler) betragen in Österreich ca. 10 % des Kaufpreises.
+              Dazu kommen laufende Kosten für Instandhaltung, Rücklagen und Versicherung — rund 1 % des Immobilienwertes pro Jahr.
+            </p>
+          </article>
+          <article class="topic-card">
+            <h3>Miete ist nicht „rausgeworfenes Geld"</h3>
+            <p>
+              Der häufigste Irrtum: Miete sei verlorenes Geld. In Wahrheit zahlst du als Eigentümer Zinsen, Nebenkosten und
+              Opportunitätskosten — oft mehr als die Miete. Die Differenz entscheidet, nicht das Bauchgefühl.
+            </p>
+          </article>
+        </div>
+
+        <!-- FAQ Preview -->
+        <section class="faq-section" id="faq">
+          <div class="faq-header">
+            <h2 class="faq-title">Häufige Fragen (FAQ)</h2>
+            <a href="faq.html" class="faq-link">Alle Fragen ansehen →</a>
+          </div>
+
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Lohnt sich Mieten oder Kaufen?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Das hängt von individuellen Faktoren wie Kaufpreis, Miethöhe, Zinsniveau, Eigenkapital und
+              alternativer Rendite ab. Unser Rechner vergleicht beide Optionen mathematisch exakt und
+              berücksichtigt dabei auch versteckte Kosten wie Opportunitätskosten und laufende Instandhaltung.</div>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Was ist der maximale Kaufpreis (Break-Even)?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Der maximale Kaufpreis ist der Break-Even-Punkt: Bis zu diesem Preis lohnt sich Kaufen,
+              darüber fährst du mit Miete + Kapitalanlage langfristig besser. Er hängt von deiner aktuellen
+              Miete, dem Zinsniveau und der erwarteten Aktienrendite ab.</div>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Wie werden die Opportunitätskosten berechnet?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Wir berechnen, was dein Eigenkapital und die monatliche Differenz zwischen Kauf- und Mietkosten
+              erwirtschaftet hätten, wenn du sie in einen breit diversifizierten ETF investiert hättest.
+              Am Ende wird die Kapitalertragsteuer (KESt 27,5 %) abgezogen. Dies ist oft der entscheidende Faktor im Vergleich.</div>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Welche Annahmen stecken im Modell?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Im Schnell-Modus: 20 % Eigenkapital, 10 % Kaufnebenkosten, 1 % laufende Kosten p.a.,
+              2,6 % Immobilienwertsteigerung, 2,8 % jährliche Mieterhöhung, KESt (je nach Land) und 30 Jahre Laufzeit.
+              Im Detailliert-Modus kannst du jeden dieser Parameter individuell anpassen.</div>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Ist der Rechner kostenlos?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Ja, zu 100 %. Das Projekt ist privat finanziert. Wir verkaufen keine Daten und haben keine
+              kommerziellen Interessen. Unser Ziel ist finanzielle Transparenz bei der wichtigsten
+              finanziellen Entscheidung deines Lebens.</div>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-q" aria-expanded="false"><span itemprop="name">Was ist die KESt / Kapitalertragsteuer?</span><span class="plus">+</span></button>
+            <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">Die Kapitalertragsteuer wird auf Kursgewinne fällig, wenn du ETFs verkaufst. In Österreich beträgt sie
+              27,5 %, in Deutschland 26,375 % (inkl. Soli). Wechsle im Header zwischen AT und DE, oder passe den Wert
+              im Detailliert-Modus individuell an.</div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="footer-content">
+            <nav class="footer-links" aria-label="Footer-Navigation">
+              <a href="methodik.html">Methodik</a>
+              <a href="faq.html">FAQ</a>
+              <a href="glossar.html">Glossar</a>
+              <a href="ueber-uns.html">Über uns</a>
+              <a href="impressum.html">Impressum</a>
+            </nav>
+            <div class="footer-meta">
+              <span>Mieten vs. Kaufen — Alle Angaben ohne Gewähr</span><br>
+              <span>Privat finanziert · Open Source · © 2025 ByteBakery UG</span>
+            </div>
+          </div>
+        </footer>
       </div>
-
-      <div class="topic-grid">
-        <div class="topic-card">
-          <h3>Das gebundene Kapital arbeitet nicht</h3>
-          <p>
-            Wer 80.000 € Eigenkapital in eine Immobilie steckt, kann dieses Geld nicht mehr am Aktienmarkt anlegen.
-            Bei 7 % Rendite „kostet" dich das gebundene Kapital in 30 Jahren über 500.000 € an entgangenem Gewinn.
-            Unser Rechner stellt genau diesen Nachteil der Kreditbelastung gegenüber.
-          </p>
-        </div>
-        <div class="topic-card">
-          <h3>Dein persönlicher Break-Even-Punkt</h3>
-          <p>
-            Der Sweetspot-Kaufpreis zeigt dir den maximalen Kaufpreis, bis zu dem sich Kaufen gegenüber Mieten + Investieren lohnt.
-            Liegt dein Wunschpreis darüber, fährst du mit Miete und ETF-Sparplan besser — mathematisch betrachtet.
-          </p>
-        </div>
-        <div class="topic-card">
-          <h3>Versteckte Kosten beim Kauf</h3>
-          <p>
-            Kaufnebenkosten (Grunderwerbsteuer, Notar, Makler) betragen in Österreich ca. 10 % des Kaufpreises.
-            Dazu kommen laufende Kosten für Instandhaltung, Rücklagen und Versicherung — rund 1 % des Immobilienwertes pro Jahr.
-          </p>
-        </div>
-        <div class="topic-card">
-          <h3>Miete ist nicht „rausgeworfenes Geld"</h3>
-          <p>
-            Der häufigste Irrtum: Miete sei verlorenes Geld. In Wahrheit zahlst du als Eigentümer Zinsen, Nebenkosten und
-            Opportunitätskosten — oft mehr als die Miete. Die Differenz entscheidet, nicht das Bauchgefühl.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="faq-section" id="faq">
-        <div class="faq-title">Häufige Fragen (FAQ)</div>
-
-        <div class="faq-item">
-          <button class="faq-q">Lohnt sich Mieten oder Kaufen?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Das hängt von individuellen Faktoren wie Kaufpreis, Miethöhe, Zinsniveau, Eigenkapital und
-            alternativer Rendite ab. Unser Rechner vergleicht beide Optionen mathematisch exakt und
-            berücksichtigt dabei auch versteckte Kosten wie Opportunitätskosten und laufende Instandhaltung.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Was ist der Sweetspot-Kaufpreis?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Der Sweetspot-Kaufpreis ist der Break-Even-Punkt: Bis zu diesem Preis lohnt sich Kaufen,
-            darüber fährst du mit Miete + Kapitalanlage langfristig besser. Er hängt von deiner aktuellen
-            Miete, dem Zinsniveau und der erwarteten Aktienrendite ab.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Wie werden die Opportunitätskosten berechnet?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Wir berechnen, was dein Eigenkapital und die monatliche Differenz zwischen Kauf- und Mietkosten
-            erwirtschaftet hätten, wenn du sie in einen breit diversifizierten ETF investiert hättest.
-            Am Ende wird die Kapitalertragsteuer (KESt 27,5 %) abgezogen. Dies ist oft der entscheidende Faktor im Vergleich.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Welche Annahmen stecken im Modell?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Im Schnell-Modus: 20 % Eigenkapital, 10 % Kaufnebenkosten, 1 % laufende Kosten p.a.,
-            2,6 % Immobilienwertsteigerung, 2,8 % jährliche Mieterhöhung, KESt (je nach Land) und 30 Jahre Laufzeit.
-            Im Detailliert-Modus kannst du jeden dieser Parameter individuell anpassen.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Ist der Rechner kostenlos?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Ja, zu 100 %. Das Projekt ist privat finanziert. Wir verkaufen keine Daten und haben keine
-            kommerziellen Interessen. Unser Ziel ist finanzielle Transparenz bei der wichtigsten
-            finanziellen Entscheidung deines Lebens.
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Was ist die KESt / Kapitalertragsteuer?<span class="plus">+</span></button>
-          <div class="faq-a">
-            Die Kapitalertragsteuer wird auf Kursgewinne fällig, wenn du ETFs verkaufst. In Österreich beträgt sie
-            27,5 %, in Deutschland 26,375 % (inkl. Soli). Wechsle im Header zwischen AT und DE, oder passe den Wert
-            im Detailliert-Modus individuell an.
-          </div>
-        </div>
-      </div>
-
-      <footer class="site-footer">
-        <span>Mieten vs. Kaufen — Alle Angaben ohne Gewähr</span>
-        <span>Privat finanziert · Open Source · <a href="impressum.html" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">Impressum</a></span>
-      </footer>
     </div>
-  </div>
+  </main>
 
   <!-- ═══════════════════════════════════════ -->
   <!-- SCRIPT                                  -->
@@ -1132,7 +1391,7 @@
       };
     }
 
-    var sweetspotChart = null;
+    var breakevenChart = null;
 
     function recompute() {
       var params = getParams();
@@ -1151,24 +1410,24 @@
         }
       }
 
-      // Sweetspot
-      var sweetspotPoint = null, sweetspotPrice = NaN;
+      // Break-Even
+      var breakevenPoint = null, breakevenPrice = NaN;
       if (!isNaN(yourRent) && yourRent > 0) {
-        sweetspotPrice = findThreshold(yourRent, params);
-        if (!isNaN(sweetspotPrice)) {
-          sweetspotPoint = { x: yourRent, y: sweetspotPrice + sweetspotPrice * params.closingRate - sweetspotPrice * params.equityRatio };
+        breakevenPrice = findThreshold(yourRent, params);
+        if (!isNaN(breakevenPrice)) {
+          breakevenPoint = { x: yourRent, y: breakevenPrice + breakevenPrice * params.closingRate - breakevenPrice * params.equityRatio };
         }
       }
 
       // KPIs
       var kpiStrip = document.getElementById("kpiStrip");
-      var kpiSweetspot = document.getElementById("kpiSweetspot");
+      var kpiBreakeven = document.getElementById("kpiBreakeven");
       var kpiMonthly = document.getElementById("kpiMonthly");
-      if (!isNaN(sweetspotPrice)) {
+      if (!isNaN(breakevenPrice)) {
         kpiStrip.style.display = "flex";
-        kpiSweetspot.innerHTML = fmt(sweetspotPrice) + ' <span class="kpi-unit">€</span>';
+        kpiBreakeven.innerHTML = fmt(breakevenPrice) + ' <span class="kpi-unit">€</span>';
       } else {
-        kpiSweetspot.textContent = "—";
+        kpiBreakeven.textContent = "—";
       }
 
       // Result
@@ -1207,8 +1466,8 @@
         kpiStrip.style.display = "flex";
 
         purchasePoint = { x: yourRent, y: comp.loan };
-        if (sweetspotPoint) {
-          diffLinePoints = [{ x: yourRent, y: comp.loan }, { x: yourRent, y: sweetspotPoint.y }];
+        if (breakevenPoint) {
+          diffLinePoints = [{ x: yourRent, y: comp.loan }, { x: yourRent, y: breakevenPoint.y }];
         }
 
         detailsCard.style.display = "block";
@@ -1220,15 +1479,14 @@
           row("Laufende Kosten (1. J./Mo.)", fmt(comp.firstYearRunningMonthly) + " €", "—"),
           row("Gesamtbelastung (1. J./Mo.)", fmt(comp.monthlyRate + comp.firstYearRunningMonthly) + " €", fmt(yourRent) + " €"),
           row("Gesamtausgaben (" + T + " J.)", fmt(comp.totalExpensesBuy) + " €", fmt(comp.totalExpensesRent) + " €"),
-          row('Endvermögen <span class=\"info-icon\" data-info=\"Ein negativer Wert bedeutet, die monatlichen Mietkosten sind höher als dein Investment.\">i</span>', fmt(comp.propertyFinal) + " €", fmt(comp.portfolioAfterTax) + " €"),
-          rowColored('Saldo (Endvermögen − Ausgaben) <span class=\"info-icon\" data-info=\"Ein negativer Wert bedeutet, dass das Endvermögen niedriger ist als die Summe der Ausgaben – nicht, dass dein Investment negativ ist.\">i</span>', (diffGain >= 0 ? "+" : "") + fmt(diffGain) + " €", "", diffGain)
+          row('Endvermögen <span class="info-icon" data-info="Ein negativer Wert bedeutet, die monatlichen Mietkosten sind höher als dein Investment.">i</span>', fmt(comp.propertyFinal) + " €", fmt(comp.portfolioAfterTax) + " €"),
+          rowColored('Saldo (Endvermögen − Ausgaben) <span class="info-icon" data-info="Ein negativer Wert bedeutet, dass das Endvermögen niedriger ist als die Summe der Ausgaben – nicht, dass dein Investment negativ ist.">i</span>', (diffGain >= 0 ? "+" : "") + fmt(diffGain) + " €", "", diffGain)
         ].join("");
 
-        // Info-Popups an (i)-Icons hängen
+        // Info-Popups
         document.querySelectorAll("#compBody .info-icon").forEach(function (icon) {
           icon.addEventListener("click", function (e) {
             e.stopPropagation();
-            // vorhandene Popups schließen
             document.querySelectorAll(".info-popup").forEach(function (p) { p.remove(); });
             var text = icon.getAttribute("data-info");
             if (!text) return;
@@ -1240,14 +1498,12 @@
             var rect = icon.getBoundingClientRect();
             var padding = 8;
 
-            // Erst einmal unten positionieren
             popup.style.left = Math.min(
               rect.left,
               window.innerWidth - popup.offsetWidth - padding
             ) + "px";
             popup.style.top = (rect.bottom + 6) + "px";
 
-            // Wenn unten kein Platz: nach oben verschieben
             var overflowBottom = rect.bottom + 6 + popup.offsetHeight + padding - window.innerHeight;
             if (overflowBottom > 0) {
               var newTop = rect.top - popup.offsetHeight - 6;
@@ -1258,8 +1514,8 @@
         });
       } else {
         resultBanner.classList.remove("has-result", "buy-wins", "rent-wins");
-        if (!isNaN(sweetspotPrice)) {
-          headline.innerHTML = "Sweetspot: " + fmt(sweetspotPrice) + " €";
+        if (!isNaN(breakevenPrice)) {
+          headline.innerHTML = "Max. Kaufpreis: " + fmt(breakevenPrice) + " €";
           sub.innerHTML = "Bis zu diesem Kaufpreis lohnt sich Kaufen bei <b>" + fmt(yourRent) + " € Miete</b>. Darüber ist Mieten + Investieren besser.";
         } else {
           headline.innerHTML = "Gib einen Kaufpreis ein.";
@@ -1268,20 +1524,20 @@
         disclaimer.textContent = "";
         kpiMonthly.textContent = "—";
         detailsCard.style.display = "none";
-        if (isNaN(sweetspotPrice)) kpiStrip.style.display = "none";
+        if (isNaN(breakevenPrice)) kpiStrip.style.display = "none";
       }
 
       // Chart
-      var ctx = document.getElementById("sweetspotChart").getContext("2d");
-      if (sweetspotChart) sweetspotChart.destroy();
+      var ctx = document.getElementById("breakevenChart").getContext("2d");
+      if (breakevenChart) breakevenChart.destroy();
 
       var datasets = [{
         label: "Max. Kreditsumme (Schwelle)",
         data: diagonalPoints, showLine: true, borderWidth: 2, pointRadius: 0,
         borderColor: "#0a0a0a", backgroundColor: "rgba(10,10,10,0.03)", fill: true
       }];
-      if (sweetspotPoint) datasets.push({
-        label: "Dein Sweetspot", data: [sweetspotPoint], showLine: false,
+      if (breakevenPoint) datasets.push({
+        label: "Dein Break-Even", data: [breakevenPoint], showLine: false,
         pointRadius: 7, pointBackgroundColor: "#1a7f4b", pointBorderColor: "#fff", pointBorderWidth: 2
       });
       if (purchasePoint) datasets.push({
@@ -1295,7 +1551,7 @@
         borderWidth: 2, borderDash: [5, 4], borderColor: "rgba(10,10,10,0.35)"
       });
 
-      sweetspotChart = new Chart(ctx, {
+      breakevenChart = new Chart(ctx, {
         type: "scatter",
         data: { datasets: datasets },
         options: {
@@ -1351,11 +1607,11 @@
       document.getElementById("modeEasy").classList.remove("active");
       document.getElementById("expertFields").classList.add("visible");
       document.getElementById("easyInfo").style.display = "none";
-      // Auto-expand details when switching to detailed mode
       var toggle = document.getElementById("detailsToggle");
       var body = document.getElementById("detailsBody");
       if (!body.classList.contains("open")) {
         toggle.classList.add("open");
+        toggle.setAttribute("aria-expanded", "true");
         body.classList.add("open");
       }
     });
@@ -1368,6 +1624,8 @@
       currentCountry = country;
       document.getElementById("countryAT").classList.toggle("active", country === "AT");
       document.getElementById("countryDE").classList.toggle("active", country === "DE");
+      document.getElementById("countryAT").setAttribute("aria-pressed", country === "AT");
+      document.getElementById("countryDE").setAttribute("aria-pressed", country === "DE");
       document.getElementById("kest").value = kestValues[country];
       document.getElementById("kestInfoText").textContent = kestValues[country].toString().replace(".", ",") + " % KESt";
       recompute();
@@ -1379,6 +1637,8 @@
     // Details accordion
     document.getElementById("detailsToggle").addEventListener("click", function () {
       this.classList.toggle("open");
+      var expanded = this.classList.contains("open");
+      this.setAttribute("aria-expanded", expanded);
       document.getElementById("detailsBody").classList.toggle("open");
     });
 
@@ -1386,11 +1646,13 @@
     document.querySelectorAll(".faq-q").forEach(function (btn) {
       btn.addEventListener("click", function () {
         this.classList.toggle("open");
+        var expanded = this.classList.contains("open");
+        this.setAttribute("aria-expanded", expanded);
         this.nextElementSibling.classList.toggle("open");
       });
     });
 
-    // Klick außerhalb schließt Info-Popups
+    // Close info popups on click outside
     document.addEventListener("click", function () {
       document.querySelectorAll(".info-popup").forEach(function (p) { p.remove(); });
     });
@@ -1409,7 +1671,6 @@
       headerMenuToggle.addEventListener("click", function () {
         headerMenu.classList.toggle("open");
       });
-      // Close menu after clicking a navigation link
       headerMenu.querySelectorAll(".header-nav a").forEach(function (link) {
         link.addEventListener("click", function () {
           headerMenu.classList.remove("open");

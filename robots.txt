@@ -1,0 +1,10 @@
+# robots.txt for mieten-oder-kaufen.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mieten-oder-kaufen.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1

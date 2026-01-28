@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Glossar: Immobilien-Begriffe einfach erklärt – Mieten oder Kaufen</title>
+  <meta name="description" content="Glossar mit einfachen Erklärungen zu Immobilien-Begriffen: Kaufnebenkosten, KESt, Opportunitätskosten, Grunderwerbsteuer, Tilgung und mehr." />
+  <meta name="keywords" content="immobilien glossar, kaufnebenkosten erklärt, kest kapitalertragsteuer, grunderwerbsteuer österreich deutschland, tilgung kredit" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/glossar" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f7f7f3;
+      --card: #ffffff;
+      --gray-100: #f0f0ec;
+      --gray-200: #e2e2de;
+      --gray-400: #999;
+      --gray-600: #666;
+      --green: #1a7f4b;
+      --radius: 12px;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --header-h: 54px;
+      --content-w: 800px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      height: var(--header-h);
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 100;
+    }
+    .header-logo {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .header-logo svg { opacity: 0.85; }
+    .header-nav { display: flex; align-items: center; gap: 4px; }
+    .header-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .header-nav a.active { color: #fff; background: rgba(255,255,255,0.12); }
+    .header-menu { display: flex; align-items: center; gap: 12px; }
+    .header-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .header-menu-toggle svg { width: 20px; height: 20px; }
+
+    .container {
+      max-width: var(--content-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    main { padding: 48px 0 80px; }
+
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: var(--gray-600); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+      max-width: 650px;
+    }
+
+    .glossary-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .glossary-nav a {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .glossary-nav a:hover {
+      background: var(--gray-100);
+      color: var(--black);
+    }
+
+    .glossary-section {
+      margin-bottom: 40px;
+    }
+    .glossary-letter {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--green);
+    }
+
+    .glossary-term {
+      margin-bottom: 24px;
+    }
+    .glossary-term h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .glossary-term p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .cta-box {
+      background: var(--black);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--black);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .site-footer {
+      border-top: 1.5px solid var(--black);
+      padding: 24px 0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--black); }
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 20px; }
+      header { position: relative; height: auto; padding: 8px 12px; }
+      .header-menu-toggle { display: block; margin-left: auto; }
+      .header-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        padding: 10px 16px 14px;
+        flex-direction: column;
+      }
+      .header-menu.open { display: flex; }
+      .header-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .header-nav a { width: 100%; padding: 8px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="header-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Mieten vs. Kaufen
+    </a>
+    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
+    </button>
+    <div class="header-menu" id="headerMenu">
+      <nav class="header-nav">
+        <a href="/">Rechner</a>
+        <a href="/methodik">Methodik</a>
+        <a href="/faq">FAQ</a>
+        <a href="/glossar" class="active">Glossar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <nav class="breadcrumb"><a href="/">Startseite</a> → Glossar</nav>
+
+      <h1>Glossar: Immobilien-Begriffe einfach erklärt</h1>
+      <p class="intro">
+        Von Annuität bis Zinsanteil – hier findest du alle wichtigen Begriffe
+        rund um Immobilienkauf und -finanzierung verständlich erklärt.
+      </p>
+
+      <nav class="glossary-nav">
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#E">E</a>
+        <a href="#G">G</a>
+        <a href="#I">I</a>
+        <a href="#K">K</a>
+        <a href="#M">M</a>
+        <a href="#N">N</a>
+        <a href="#O">O</a>
+        <a href="#R">R</a>
+        <a href="#T">T</a>
+        <a href="#W">W</a>
+        <a href="#Z">Z</a>
+      </nav>
+
+      <section class="glossary-section" id="A">
+        <h2 class="glossary-letter">A</h2>
+        <div class="glossary-term">
+          <h3>Annuität</h3>
+          <p>Gleichbleibende monatliche Rate bei einem Kredit, die sich aus Zins- und Tilgungsanteil zusammensetzt. Zu Beginn ist der Zinsanteil hoch, später überwiegt die Tilgung.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Aktienrendite</h3>
+          <p>Die durchschnittliche jährliche Rendite von Aktienanlagen. Historisch liegt der MSCI World bei ca. 7% p.a. langfristig. Wird im Rechner als Alternative zur Immobilie verwendet.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="B">
+        <h2 class="glossary-letter">B</h2>
+        <div class="glossary-term">
+          <h3>Break-Even-Punkt</h3>
+          <p>Der Punkt, an dem zwei Alternativen zum gleichen Ergebnis führen. Im Rechner: Der Kaufpreis, bei dem Kaufen und Mieten+Investieren gleich vorteilhaft sind.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Beleihungswert</h3>
+          <p>Der Wert, den die Bank für eine Immobilie als Sicherheit ansetzt. Er liegt meist unter dem Kaufpreis und bestimmt die maximale Kredithöhe.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="E">
+        <h2 class="glossary-letter">E</h2>
+        <div class="glossary-term">
+          <h3>Eigenkapital</h3>
+          <p>Der Anteil des Kaufpreises, den du selbst einbringst (nicht über Kredit finanzierst). Typisch sind 20% des Kaufpreises plus Kaufnebenkosten.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Effektivzins</h3>
+          <p>Der tatsächliche Jahreszins eines Kredits, inkl. aller Nebenkosten und Gebühren. Wichtiger als der Nominalzins für den echten Kostenvergleich.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="G">
+        <h2 class="glossary-letter">G</h2>
+        <div class="glossary-term">
+          <h3>Grunderwerbsteuer</h3>
+          <p>Steuer beim Immobilienkauf. In Österreich 3,5% vom Kaufpreis, in Deutschland 3,5-6,5% je nach Bundesland.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Grundbucheintragung</h3>
+          <p>Gebühr für die Eintragung des Eigentums im Grundbuch. In Österreich 1,1% des Kaufpreises.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="I">
+        <h2 class="glossary-letter">I</h2>
+        <div class="glossary-term">
+          <h3>Instandhaltungsrücklage</h3>
+          <p>Regelmäßige Rücklage für Reparaturen und Sanierungen. Faustformel: ca. 1 € pro m² Wohnfläche pro Monat oder 0,5-1% des Immobilienwerts pro Jahr.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Indexmiete</h3>
+          <p>Mietvertrag, bei dem die Miete automatisch an den Verbraucherpreisindex (Inflation) angepasst wird. Typisch in Deutschland.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="K">
+        <h2 class="glossary-letter">K</h2>
+        <div class="glossary-term">
+          <h3>KESt (Kapitalertragsteuer)</h3>
+          <p>Steuer auf Kapitalerträge wie Zinsen, Dividenden und Kursgewinne. In Österreich 27,5%, in Deutschland 26,375% (inkl. Solidaritätszuschlag).</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Kaufnebenkosten</h3>
+          <p>Zusätzliche Kosten beim Immobilienkauf: Grunderwerbsteuer, Notar, Grundbuch, Makler. In Österreich ca. 10%, in Deutschland 7-15% des Kaufpreises.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Kreditzins</h3>
+          <p>Der jährliche Zinssatz, den du für deinen Immobilienkredit zahlst. Aktuell (2025) liegt er bei ca. 2,5-4% p.a.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="M">
+        <h2 class="glossary-letter">M</h2>
+        <div class="glossary-term">
+          <h3>Mietrendite</h3>
+          <p>Die jährliche Mieteinnahme im Verhältnis zum Kaufpreis. Wichtig für Investoren, die vermieten wollen.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Mieterhöhung</h3>
+          <p>Jährliche Steigerung der Miete. Historisch ca. 2-3% p.a., abhängig von Lage und Mietrecht.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="N">
+        <h2 class="glossary-letter">N</h2>
+        <div class="glossary-term">
+          <h3>Nominalzins</h3>
+          <p>Der reine Zinssatz des Kredits ohne Nebenkosten. Für Vergleiche ist der Effektivzins aussagekräftiger.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Notarkosten</h3>
+          <p>Gebühren für die notarielle Beurkundung des Kaufvertrags. In Österreich ca. 1-2%, in Deutschland ca. 1,5% des Kaufpreises.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="O">
+        <h2 class="glossary-letter">O</h2>
+        <div class="glossary-term">
+          <h3>Opportunitätskosten</h3>
+          <p>Entgangene Gewinne durch eine Entscheidung. Beim Immobilienkauf: Die Rendite, die dein Eigenkapital am Aktienmarkt erzielt hätte, wenn du es nicht in die Immobilie gesteckt hättest.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="R">
+        <h2 class="glossary-letter">R</h2>
+        <div class="glossary-term">
+          <h3>Realrendite</h3>
+          <p>Die Rendite nach Abzug der Inflation. Zeigt den echten Kaufkraftzuwachs deines Vermögens.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Richtwertmiete</h3>
+          <p>In Österreich: Gesetzlich festgelegte Mietobergrenze für Altbauwohnungen, die jährlich angepasst wird.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="T">
+        <h2 class="glossary-letter">T</h2>
+        <div class="glossary-term">
+          <h3>Tilgung</h3>
+          <p>Der Teil der Kreditrate, der zur Rückzahlung des Darlehens verwendet wird (nicht für Zinsen). Je höher die Tilgung, desto schneller bist du schuldenfrei.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="W">
+        <h2 class="glossary-letter">W</h2>
+        <div class="glossary-term">
+          <h3>Wertsteigerung</h3>
+          <p>Jährliche Preissteigerung der Immobilie. Historisch ca. 2-3% p.a. im Durchschnitt, stark abhängig von Lage und Marktphase.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Warmmiete</h3>
+          <p>Die Gesamtmiete inklusive Nebenkosten (Heizung, Wasser, Müll etc.). Im Gegensatz zur Kaltmiete, die nur die reine Miete enthält.</p>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="Z">
+        <h2 class="glossary-letter">Z</h2>
+        <div class="glossary-term">
+          <h3>Zinsanteil</h3>
+          <p>Der Teil der Kreditrate, der für die Zinsen an die Bank geht. Zu Beginn der Laufzeit ist er hoch und sinkt mit der Zeit.</p>
+        </div>
+        <div class="glossary-term">
+          <h3>Zinsbindung</h3>
+          <p>Zeitraum, für den der Zinssatz festgeschrieben ist. Danach kann sich der Zins ändern (Zinsrisiko).</p>
+        </div>
+      </section>
+
+      <div class="cta-box">
+        <p>Jetzt mit deinen Zahlen rechnen!</p>
+        <a href="/" class="cta-btn">Zum Rechner →</a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <nav class="footer-links">
+          <a href="/methodik">Methodik</a>
+          <a href="/faq">FAQ</a>
+          <a href="/glossar">Glossar</a>
+          <a href="/ueber-uns">Über uns</a>
+          <a href="/impressum">Impressum</a>
+        </nav>
+        <div class="footer-meta">© 2025 ByteBakery UG</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    var headerMenuToggle = document.getElementById("headerMenuToggle");
+    var headerMenu = document.getElementById("headerMenu");
+    if (headerMenuToggle && headerMenu) {
+      headerMenuToggle.addEventListener("click", function () {
+        headerMenu.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>

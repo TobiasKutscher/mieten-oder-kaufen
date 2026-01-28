@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
-  <title>Impressum – Mieten oder Kaufen Rechner</title>
-  <meta name="description" content="Impressum und rechtliche Angaben zum Mieten oder Kaufen Rechner. Betreiber: ByteBakery UG (haftungsbeschränkt), Köln." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://mieten-oder-kaufen.com/impressum" />
+  <title>Über uns – Mieten oder Kaufen Rechner</title>
+  <meta name="description" content="Erfahre mehr über das Team hinter dem Mieten oder Kaufen Rechner. Unser Ziel: Finanzielle Transparenz bei der wichtigsten Entscheidung deines Lebens." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/ueber-uns" />
 
   <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,22 +28,20 @@
       --gray-200: #e2e2de;
       --gray-400: #999;
       --gray-600: #666;
+      --green: #1a7f4b;
       --radius: 12px;
       --font-mono: 'Space Mono', monospace;
       --font-sans: 'Inter', system-ui, sans-serif;
       --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
       --header-h: 54px;
-      --content-w: 720px;
+      --content-w: 800px;
     }
 
     body {
       font-family: var(--font-sans);
       background: var(--white);
       color: var(--black);
-      line-height: 1.5;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      line-height: 1.6;
     }
 
     header {
@@ -97,10 +95,9 @@
       max-width: var(--content-w);
       margin: 0 auto;
       padding: 0 32px;
-      flex: 1;
     }
 
-    main { padding: 48px 0 64px; }
+    main { padding: 48px 0 80px; }
 
     .breadcrumb {
       font-family: var(--font-mono);
@@ -111,59 +108,106 @@
     .breadcrumb a { color: var(--gray-600); text-decoration: none; }
     .breadcrumb a:hover { text-decoration: underline; }
 
-    .page-title {
+    h1 {
       font-family: var(--font-mono);
-      font-size: 1.6rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
       font-weight: 700;
-      margin-bottom: 32px;
       line-height: 1.2;
+      margin-bottom: 16px;
     }
 
-    .legal-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 32px;
+    .intro {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      margin-bottom: 40px;
+      max-width: 650px;
+      line-height: 1.7;
     }
 
-    .legal-section { margin-bottom: 28px; }
-    .legal-section:last-child { margin-bottom: 0; }
+    .content-section {
+      margin-bottom: 48px;
+    }
 
-    .legal-section-title {
+    h2 {
       font-family: var(--font-mono);
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gray-400);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .legal-section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--gray-200);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
-    .legal-content {
-      font-size: 0.9rem;
+    p {
+      margin-bottom: 16px;
       color: var(--gray-600);
       line-height: 1.7;
     }
-    .legal-content strong {
-      color: var(--black);
-      font-weight: 600;
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
     }
-    .legal-content p { margin-bottom: 8px; }
-    .legal-content p:last-child { margin-bottom: 0; }
-    .legal-content a {
-      color: var(--black);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    .value-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      text-align: center;
     }
-    .legal-content a:hover { color: var(--gray-600); }
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .value-card h3 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .value-card p {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    .contact-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .contact-box h3 {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .contact-box p {
+      margin-bottom: 8px;
+    }
+    .contact-box a {
+      color: var(--black);
+    }
+
+    .cta-box {
+      background: var(--black);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--black);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
 
     .site-footer {
       border-top: 1.5px solid var(--black);
@@ -189,6 +233,10 @@
       color: var(--gray-400);
     }
 
+    @media (max-width: 700px) {
+      .value-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 560px) {
       .container { padding: 0 20px; }
       header { position: relative; height: auto; padding: 8px 12px; }
@@ -206,8 +254,6 @@
       .header-menu.open { display: flex; }
       .header-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
       .header-nav a { width: 100%; padding: 8px 0; }
-      .legal-card { padding: 24px 20px; }
-      .page-title { font-size: 1.3rem; }
     }
   </style>
 </head>
@@ -237,60 +283,74 @@
 
   <div class="container">
     <main>
-      <nav class="breadcrumb"><a href="/">Startseite</a> → Impressum</nav>
+      <nav class="breadcrumb"><a href="/">Startseite</a> → Über uns</nav>
 
-      <h1 class="page-title">Impressum</h1>
+      <h1>Über uns</h1>
+      <p class="intro">
+        Wir glauben, dass die Entscheidung „Mieten oder Kaufen" zu wichtig ist,
+        um sie auf Bauchgefühl zu stützen. Deshalb haben wir diesen Rechner gebaut:
+        transparent, kostenlos und ohne versteckte Interessen.
+      </p>
 
-      <div class="legal-card">
+      <section class="content-section">
+        <h2>Unsere Mission</h2>
+        <p>
+          Der Immobilienkauf ist für viele Menschen die größte finanzielle Entscheidung
+          ihres Lebens. Trotzdem wird sie oft emotional getroffen – „Eigentum ist immer gut",
+          „Miete ist rausgeworfenes Geld". Diese Mythen kosten Menschen Hunderttausende Euro.
+        </p>
+        <p>
+          Unser Ziel ist es, eine objektive, mathematisch fundierte Entscheidungshilfe
+          zu bieten. Keine Verkaufsargumente, keine versteckten Provisionen – nur Zahlen,
+          die dir helfen, die richtige Entscheidung zu treffen.
+        </p>
+      </section>
 
-        <div class="legal-section">
-          <div class="legal-section-title">Angaben gemäß § 5 TMG</div>
-          <div class="legal-content">
-            <p><strong>ByteBakery UG (haftungsbeschränkt)</strong></p>
-            <p>Leinsamenweg 114<br>50933 Köln</p>
+      <section class="content-section">
+        <h2>Unsere Werte</h2>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-icon">&#128202;</div>
+            <h3>Transparenz</h3>
+            <p>Alle Annahmen und Formeln sind dokumentiert und nachvollziehbar.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">&#128274;</div>
+            <h3>Datenschutz</h3>
+            <p>Keine Tracking-Cookies, keine Datenverkäufe, keine Registrierung.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">&#127873;</div>
+            <h3>Kostenlos</h3>
+            <p>100% kostenlos, privat finanziert, ohne kommerzielle Interessen.</p>
           </div>
         </div>
+      </section>
 
-        <div class="legal-section">
-          <div class="legal-section-title">Handelsregister</div>
-          <div class="legal-content">
-            <p>Handelsregister: HRB 115453<br>
-            Registergericht: Handelsregister B des Amtsgerichts Köln</p>
-          </div>
-        </div>
+      <section class="content-section">
+        <h2>Das Team</h2>
+        <p>
+          Der Mieten oder Kaufen Rechner ist ein Projekt von <strong>ByteBakery UG</strong>,
+          einem kleinen Team aus Köln mit Leidenschaft für Finanzen und Technologie.
+        </p>
+        <p>
+          Wir sind keine Finanzberater und verkaufen keine Immobilien. Unser Antrieb
+          ist rein informativ: Wir wollen Menschen helfen, fundierte Entscheidungen zu treffen.
+        </p>
+      </section>
 
-        <div class="legal-section">
-          <div class="legal-section-title">Vertreten durch</div>
-          <div class="legal-content">
-            <p>Oliver Ester</p>
-          </div>
-        </div>
+      <div class="contact-box">
+        <h3>Kontakt</h3>
+        <p>Hast du Fragen, Feedback oder Verbesserungsvorschläge?</p>
+        <p>
+          <strong>Tobias Kutscher</strong><br>
+          E-Mail: <a href="mailto:hallo@tobiaskutscher.com">hallo@tobiaskutscher.com</a>
+        </p>
+      </div>
 
-        <div class="legal-section">
-          <div class="legal-section-title">Kontakt</div>
-          <div class="legal-content">
-            <p><strong>Tobias Kutscher</strong></p>
-            <p>E-Mail: <a href="mailto:hallo@tobiaskutscher.com">hallo@tobiaskutscher.com</a><br>
-            Telefon: <a href="tel:+4915775881704">+49 157 75881704</a></p>
-          </div>
-        </div>
-
-        <div class="legal-section">
-          <div class="legal-section-title">EU-Streitschlichtung</div>
-          <div class="legal-content">
-            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
-            <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
-          </div>
-        </div>
-
-        <div class="legal-section">
-          <div class="legal-section-title">Verbraucherstreitbeilegung / Universalschlichtungsstelle</div>
-          <div class="legal-content">
-            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-          </div>
-        </div>
-
+      <div class="cta-box">
+        <p>Bereit für den Vergleich?</p>
+        <a href="/" class="cta-btn">Zum Rechner →</a>
       </div>
     </main>
 
