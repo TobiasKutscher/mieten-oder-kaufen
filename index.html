@@ -8,7 +8,7 @@
   <title>Mieten oder Kaufen Rechner 2025 (AT & DE) – Maximaler Kaufpreis berechnen</title>
   <meta name="description" content="Kostenloser Mieten oder Kaufen Rechner für Österreich & Deutschland: Berechne deinen maximalen Kaufpreis, Vermögensvorteil, Kreditzins und Rendite. Mit KESt-Berechnung und detaillierter Analyse." />
   <meta name="keywords" content="mieten oder kaufen rechner, mieten vs kaufen, immobilie kaufen oder mieten, kaufen oder mieten berechnen, wohnung kaufen rechner, österreich, deutschland, KESt, kaufnebenkosten" />
-  <meta name="author" content="ByteBakery UG" />
+  <meta name="author" content="ByteBakery UG (haftungsbeschränkt)" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mieten-oder-kaufen.com/" />
 
@@ -53,7 +53,7 @@
     },
     "author": {
       "@type": "Organization",
-      "name": "ByteBakery UG"
+      "name": "ByteBakery UG (haftungsbeschränkt)"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -853,6 +853,38 @@
       flex-wrap: wrap;
       gap: 24px;
     }
+    .footer-cities {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 8px;
+    }
+    .footer-cities-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-400);
+      margin-right: 8px;
+    }
+    .footer-cities a {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 4px 10px;
+      background: var(--gray-100);
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+    .footer-cities a:hover {
+      background: var(--black);
+      color: #fff;
+    }
     .footer-links {
       display: flex;
       gap: 24px;
@@ -977,8 +1009,8 @@
     <div class="container" id="rechner">
       <!-- H1 Hero Section -->
       <div class="page-hero">
-        <h1>Mieten oder Kaufen Rechner (Österreich & Deutschland)</h1>
-        <p class="subtitle">Berechne deinen maximalen Kaufpreis und vergleiche den Vermögensvorteil von Mieten vs. Kaufen – mit Opportunitätskosten, Kreditzins und KESt.</p>
+        <h1>Mieten oder Kaufen Rechner 2025</h1>
+        <p class="subtitle">Berechne deinen maximalen Kaufpreis und vergleiche den Vermögensvorteil von Mieten vs. Kaufen – mit Opportunitätskosten, Kreditzins und KESt. Für Österreich und Deutschland mit länderspezifischer Kapitalertragsteuer.</p>
       </div>
 
       <div class="calc-section">
@@ -1125,7 +1157,7 @@
             </div>
 
             <!-- Details -->
-            <div class="details-card" id="detailsCard" style="display:none;">
+            <div class="details-card" id="detailsCard">
               <button class="details-toggle" id="detailsToggle" aria-expanded="false" aria-controls="detailsBody">
                 Berechnungs-Details
                 <span class="chevron" aria-hidden="true">▼</span>
@@ -1290,6 +1322,16 @@
 
         <footer class="site-footer">
           <div class="footer-content">
+            <div class="footer-cities">
+              <span class="footer-cities-label">Städte-Rechner:</span>
+              <a href="/berlin">Berlin</a>
+              <a href="/muenchen">München</a>
+              <a href="/hamburg">Hamburg</a>
+              <a href="/frankfurt">Frankfurt</a>
+              <a href="/koeln">Köln</a>
+              <a href="/duesseldorf">Düsseldorf</a>
+              <a href="/stuttgart">Stuttgart</a>
+            </div>
             <nav class="footer-links" aria-label="Footer-Navigation">
               <a href="/methodik">Methodik</a>
               <a href="/faq">FAQ</a>
@@ -1476,7 +1518,6 @@
           diffLinePoints = [{ x: yourRent, y: comp.loan }, { x: yourRent, y: breakevenPoint.y }];
         }
 
-        detailsCard.style.display = "block";
         document.getElementById("compBody").innerHTML = [
           row("Eigenkapital (" + (params.equityRatio * 100).toFixed(0) + " %)", fmt(comp.equity) + " €", fmt(comp.equity) + " € (inv.)"),
           row("Kaufnebenkosten (" + (params.closingRate * 100).toFixed(0) + " %)", fmt(comp.closingCost) + " €", "—"),
@@ -1529,8 +1570,8 @@
         }
         disclaimer.textContent = "";
         kpiMonthly.textContent = "—";
-        detailsCard.style.display = "none";
         if (isNaN(breakevenPrice)) kpiStrip.style.display = "none";
+        document.getElementById("compBody").innerHTML = '<tr><td colspan="3" style="text-align:center; color:var(--gray-400); padding:24px 20px;">Bitte gib einen Kaufpreis ein, um die Berechnungsdetails zu sehen.</td></tr>';
       }
 
       // Chart

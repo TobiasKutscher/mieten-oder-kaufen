@@ -8,7 +8,7 @@
   <title>Mieten oder Kaufen in Berlin 2026 – Rechner & Vergleich</title>
   <meta name="description" content="Mieten oder Kaufen in Berlin? Kostenloser Rechner für die Hauptstadt: Berechne deinen maximalen Kaufpreis bei Berliner Mietpreisen (Ø 14,50 €/m²) und vergleiche mit Kaufpreisen (Ø 5.200 €/m²)." />
   <meta name="keywords" content="mieten oder kaufen berlin, wohnung kaufen berlin, immobilie berlin rechner, mietpreise berlin, kaufpreise berlin 2026" />
-  <meta name="author" content="ByteBakery UG" />
+  <meta name="author" content="ByteBakery UG (haftungsbeschränkt)" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mieten-oder-kaufen.com/berlin" />
 
@@ -1133,7 +1133,7 @@
             </div>
 
             <!-- Details -->
-            <div class="details-card" id="detailsCard" style="display:none;">
+            <div class="details-card" id="detailsCard">
               <button class="details-toggle" id="detailsToggle" aria-expanded="false" aria-controls="detailsBody">
                 Berechnungs-Details
                 <span class="chevron" aria-hidden="true">▼</span>
@@ -1427,7 +1427,6 @@
           diffLinePoints = [{ x: yourRent, y: comp.loan }, { x: yourRent, y: breakevenPoint.y }];
         }
 
-        detailsCard.style.display = "block";
         document.getElementById("compBody").innerHTML = [
           row("Eigenkapital (" + (params.equityRatio * 100).toFixed(0) + " %)", fmt(comp.equity) + " €", fmt(comp.equity) + " € (inv.)"),
           row("Kaufnebenkosten (" + (params.closingRate * 100).toFixed(0) + " %)", fmt(comp.closingCost) + " €", "—"),
@@ -1473,8 +1472,8 @@
         }
         disclaimer.textContent = "";
         kpiMonthly.textContent = "—";
-        detailsCard.style.display = "none";
         if (isNaN(breakevenPrice)) kpiStrip.style.display = "none";
+        document.getElementById("compBody").innerHTML = '<tr><td colspan="3" style="text-align:center; color:var(--gray-400); padding:24px 20px;">Bitte gib einen Kaufpreis ein, um die Berechnungsdetails zu sehen.</td></tr>';
       }
 
       var ctx = document.getElementById("breakevenChart").getContext("2d");
