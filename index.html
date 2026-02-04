@@ -718,11 +718,13 @@
       max-width: 600px;
       margin-bottom: 18px;
     }
-    .landing-hero h2 .highlight {
+    .landing-hero h2 .highlight,
+    .cta-card-centered h3 .highlight {
       position: relative;
       white-space: nowrap;
     }
-    .landing-hero h2 .highlight::before {
+    .landing-hero h2 .highlight::before,
+    .cta-card-centered h3 .highlight::before {
       content: '';
       position: absolute;
       left: -6px;
@@ -965,6 +967,199 @@
       .footer-meta { text-align: left; }
       .chart-wrap { height: 220px; }
     }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      padding: 48px 0;
+      border-top: 1.5px solid var(--black);
+    }
+    .cta-card-centered {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 40px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-card-centered h3 {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-card-centered p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .cta-btn:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      max-width: 440px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(20px);
+      transition: transform 0.2s;
+    }
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+    .modal-header {
+      padding: 20px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .modal-title {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--gray-400);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--black); }
+    .modal-body {
+      padding: 16px 24px 24px;
+    }
+    .modal-intro {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray-600);
+      margin-bottom: 6px;
+    }
+    .form-input, .form-select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      transition: border-color 0.15s;
+    }
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--black);
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .form-checkbox input {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    .form-checkbox label {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .form-checkbox label a {
+      color: var(--black);
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--black);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: #333; }
+    .form-submit:disabled {
+      background: var(--gray-300);
+      cursor: not-allowed;
+    }
+    .form-success {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .form-success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .form-success h3 {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
   </style>
 </head>
 <body>
@@ -1177,6 +1372,22 @@
             </div>
 
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- CTA SECTION                             -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="cta-section">
+      <div class="container">
+        <div class="cta-card-centered">
+          <h3><span class="highlight">Unverbindliches Beratungsgespräch</span></h3>
+          <p>Die Entscheidung, ob du kaufen oder mieten solltest, ist sehr persönlich und hängt von vielen Faktoren und deiner Lebenssituation ab. Dieser Rechner gibt dir einen groben Überblick. Du willst deine Situation einmal mit einem Experten durchrechnen?</p>
+          <button class="cta-btn" onclick="openLeadModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            Kostenlos Vormerken
+          </button>
         </div>
       </div>
     </div>
@@ -1726,6 +1937,102 @@
     }
 
     window.addEventListener("load", recompute);
+
+    // ── LEAD MODAL ──
+    function openLeadModal() {
+      document.getElementById("leadModal").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLeadModal() {
+      document.getElementById("leadModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function validateLeadForm() {
+      var email = document.getElementById("leadEmail").value.trim();
+      var consent = document.getElementById("leadConsent").checked;
+      var btn = document.getElementById("leadSubmitBtn");
+      btn.disabled = !(email && consent);
+    }
+
+    async function submitLeadForm(e) {
+      e.preventDefault();
+      var btn = document.getElementById("leadSubmitBtn");
+      var form = document.getElementById("leadForm");
+      btn.disabled = true;
+      btn.textContent = "Wird gesendet...";
+
+      var data = {
+        email: document.getElementById("leadEmail").value.trim(),
+        region: document.getElementById("leadRegion").value,
+        newsletter: document.getElementById("leadNewsletter").checked,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        var res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          form.innerHTML = '<div class="form-success"><div class="form-success-icon">✓</div><h3>Danke für dein Interesse!</h3><p>Wir melden uns, sobald wir einen passenden Beratungspartner für dich haben.</p></div>';
+        } else {
+          throw new Error("Fehler");
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = "Vormerken";
+        alert("Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.");
+      }
+    }
+
+    // Close modal on overlay click
+    document.addEventListener("DOMContentLoaded", function() {
+      var overlay = document.getElementById("leadModal");
+      if (overlay) {
+        overlay.addEventListener("click", function(e) {
+          if (e.target === overlay) closeLeadModal();
+        });
+      }
+    });
   </script>
+
+  <!-- Lead Modal -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">Unverbindlich vormerken</div>
+        <button class="modal-close" onclick="closeLeadModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro">Wir bauen gerade ein Netzwerk aus Wohn- und Finanzierungs-Expert:innen auf. Trag dich unverbindlich ein – wir melden uns, sobald wir einen passenden Beratungspartner für dein Anliegen haben.</p>
+        <form id="leadForm" onsubmit="submitLeadForm(event)">
+          <div class="form-group">
+            <label class="form-label" for="leadEmail">E-Mail *</label>
+            <input type="email" id="leadEmail" class="form-input" required oninput="validateLeadForm()">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="leadRegion">Region (optional)</label>
+            <select id="leadRegion" class="form-select">
+              <option value="">– Bitte wählen –</option>
+              <option value="DE">Deutschland</option>
+              <option value="AT">Österreich</option>
+            </select>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="leadConsent" required onchange="validateLeadForm()">
+            <label for="leadConsent">Ich möchte kontaktiert werden, sobald ein passender Beratungspartner verfügbar ist. Meine Daten werden zu diesem Zweck gespeichert. Weitere Infos in der <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>. *</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="leadNewsletter">
+            <label for="leadNewsletter">Ich möchte Updates & Tipps per E-Mail erhalten (Newsletter).</label>
+          </div>
+          <button type="submit" class="form-submit" id="leadSubmitBtn" disabled>Vormerken</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
