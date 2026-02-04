@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Datenschutzerklärung – Mieten oder Kaufen Rechner</title>
+  <meta name="description" content="Datenschutzerklärung für Deutschland und Österreich. Informationen zur Datenverarbeitung auf mieten-oder-kaufen.com." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://mieten-oder-kaufen.com/datenschutz" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #f7f7f3;
+      --card: #ffffff;
+      --gray-100: #f0f0ec;
+      --gray-200: #e2e2de;
+      --gray-400: #999;
+      --gray-600: #666;
+      --radius: 12px;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --header-h: 54px;
+      --content-w: 800px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      height: var(--header-h);
+      background: var(--black);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 100;
+    }
+    .header-logo {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .header-logo svg { opacity: 0.85; }
+    .header-nav { display: flex; align-items: center; gap: 4px; }
+    .header-nav a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .header-menu { display: flex; align-items: center; gap: 12px; }
+    .header-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .header-menu-toggle svg { width: 20px; height: 20px; }
+
+    .container {
+      max-width: var(--content-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      flex: 1;
+    }
+
+    main { padding: 48px 0 64px; }
+
+    .breadcrumb {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: var(--gray-600); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .page-title {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* Country Tabs */
+    .country-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .country-tab {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .country-tab:hover {
+      border-color: var(--gray-400);
+    }
+    .country-tab.active {
+      background: var(--black);
+      color: #fff;
+      border-color: var(--black);
+    }
+
+    .legal-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+
+    .legal-content {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+    .legal-content h2 {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin: 32px 0 16px;
+    }
+    .legal-content h2:first-child {
+      margin-top: 0;
+    }
+    .legal-content h3 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--black);
+      margin: 24px 0 12px;
+    }
+    .legal-content p {
+      margin-bottom: 12px;
+    }
+    .legal-content ul {
+      margin: 12px 0 12px 24px;
+    }
+    .legal-content li {
+      margin-bottom: 6px;
+    }
+    .legal-content a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .legal-content a:hover { color: var(--gray-600); }
+
+    .country-content { display: none; }
+    .country-content.active { display: block; }
+
+    .site-footer {
+      border-top: 1.5px solid var(--black);
+      padding: 24px 0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--black); }
+    .footer-meta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 20px; }
+      header { position: relative; height: auto; padding: 8px 12px; }
+      .header-menu-toggle { display: block; margin-left: auto; }
+      .header-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        padding: 10px 16px 14px;
+        flex-direction: column;
+      }
+      .header-menu.open { display: flex; }
+      .header-nav { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .header-nav a { width: 100%; padding: 8px 0; }
+      .legal-card { padding: 24px 20px; }
+      .page-title { font-size: 1.3rem; }
+    }
+  </style>
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="header-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Mieten oder Kaufen
+    </a>
+    <button class="header-menu-toggle" id="headerMenuToggle" aria-label="Menü">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
+    </button>
+    <div class="header-menu" id="headerMenu">
+      <nav class="header-nav">
+        <a href="/">Rechner</a>
+        <a href="/methodik">Methodik</a>
+        <a href="/faq">FAQ</a>
+        <a href="/glossar">Glossar</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <nav class="breadcrumb"><a href="/">Startseite</a> → Datenschutz</nav>
+
+      <h1 class="page-title">Datenschutzerklärung</h1>
+
+      <div class="country-tabs">
+        <button class="country-tab active" data-country="de">🇩🇪 Deutschland</button>
+        <button class="country-tab" data-country="at">🇦🇹 Österreich</button>
+      </div>
+
+      <div class="legal-card">
+
+        <!-- DEUTSCHLAND -->
+        <div class="country-content active" id="content-de">
+          <div class="legal-content">
+            <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir verarbeiten Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften – insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), des Bundesdatenschutzgesetzes (BDSG) und ggf. des Telekommunikation-Telemedien-Datenschutz-Gesetzes (TTDSG) – sowie dieser Datenschutzerklärung.</p>
+
+            <h2>1. Verantwortliche Stelle</h2>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website (im Sinne von Art. 4 Abs. 7 DSGVO) ist:</p>
+            <p><strong>ByteBakery UG (haftungsbeschränkt)</strong><br>
+            Leinsamenweg 114<br>
+            50933 Köln<br>
+            E-Mail: <a href="mailto:hallo@tobiaskutscher.com">hallo@tobiaskutscher.com</a></p>
+            <p>Ein Datenschutzbeauftragter ist für unser Unternehmen aufgrund der Unternehmensgröße und Art der Datenverarbeitung gesetzlich nicht vorgeschrieben. Bei Fragen zum Datenschutz können Sie sich jedoch jederzeit an uns unter den oben genannten Kontaktdaten wenden.</p>
+
+            <h2>2. Hosting und Server-Logfiles</h2>
+            <h3>Externer Hosting-Dienstleister (Vercel)</h3>
+            <p>Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, als Hosting-Provider betrieben. Das bedeutet, dass alle Daten, die über unsere Website verarbeitet werden, auf den Servern von Vercel gespeichert und ausgeliefert werden. Hierbei kann es auch zu einer Übermittlung personenbezogener Daten (z.B. IP-Adressen) an Server außerhalb der EU (insbesondere in die USA) kommen.</p>
+            <p>Wir haben mit Vercel einen Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO abgeschlossen. Darin sind unter anderem sogenannte Standardvertragsklauseln nach Art. 46 Abs. 2 DSGVO vereinbart, um ein angemessenes Datenschutzniveau bei der Übermittlung von Daten in Drittländer (wie die USA) sicherzustellen.</p>
+
+            <h3>Server-Logdateien</h3>
+            <p>Bei jedem Zugriff auf unsere Website erfasst unser Webserver bzw. der Hosting-Provider automatisch bestimmte technische Zugriffsdaten in sogenannten Server-Logfiles. Zu den protokollierten Daten gehören z.B.:</p>
+            <ul>
+              <li>Datum und Uhrzeit des Zugriffs</li>
+              <li>Ihre IP-Adresse (in anonymisierter/gekürzter Form, soweit möglich)</li>
+              <li>Die aufgerufene Seite (URL) und die zuvor besuchte Seite (Referrer-URL)</li>
+              <li>Informationen über den verwendeten Browser (Browsertyp, Version) und das Betriebssystem</li>
+              <li>Ggf. übertragene Datenmenge und Meldung über erfolgreichen Abruf</li>
+            </ul>
+            <p>Diese Daten werden erhoben, um den Verbindungsaufbau zur Website zu ermöglichen, die Systemsicherheit und -stabilität zu gewährleisten sowie zur technischen Administration der Infrastruktur.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+            <h2>3. Kontaktaufnahme und E-Mail</h2>
+            <p>Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen mitgeteilten personenbezogenen Daten (z.B. Ihre E-Mail-Adresse, Name sowie der Inhalt Ihrer Nachricht) von uns gespeichert, um Ihre Anfrage zu bearbeiten und zu beantworten.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) bzw. Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung/-anbahnung)</p>
+
+            <h3>Newsletter und E-Mail-Listen</h3>
+            <p>Auf unserer Website haben Sie ggf. die Möglichkeit, sich für einen E-Mail-Newsletter oder eine Mailing-Liste anzumelden. Für die Newsletter-Anmeldung verwenden wir – sofern implementiert – ein Double-Opt-In-Verfahren.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Sie können eine einmal erteilte Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+            <h2>4. Cookies und lokale Speichermedien</h2>
+            <p>Unsere Website verwendet <strong>keine Cookies</strong> im herkömmlichen Sinne. Wir setzen derzeit weder Tracking-Cookies noch andere Technologien zur Nutzerverfolgung ein, die eine Speicherung von Daten auf Ihrem Endgerät erfordern. Daher ist nach geltendem Recht (Art. 25 TTDSG) kein Cookie-Banner oder eine Einwilligung für Cookie-Nutzung erforderlich.</p>
+
+            <h2>5. Web-Analyse (Vercel Analytics)</h2>
+            <p>Unsere Website kann das datenschutzfreundliche Analysetool <strong>Vercel Web Analytics</strong> verwenden. Vercel Web Analytics arbeitet <strong>ohne den Einsatz von Cookies</strong> oder anderen dauerhaften Identifikatoren.</p>
+            <p>Welche Daten werden erfasst:</p>
+            <ul>
+              <li>Die besuchte Seite bzw. URL (Page Path)</li>
+              <li>Datum und Uhrzeit des Seitenaufrufs</li>
+              <li>Die zuvor besuchte Seite (Referrer-URL)</li>
+              <li>Ungefähre geografische Angaben (Land, Region) – Ihre vollständige IP-Adresse wird nicht dauerhaft gespeichert</li>
+              <li>Technische Informationen: Gerätetyp, Betriebssystem, Browsertyp, Bildschirmauflösung</li>
+            </ul>
+            <p>Alle Daten werden nur in aggregierter und anonymisierter Form bereitgestellt. Eine individuelle Identifizierung ist nicht möglich.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+            <h2>6. Ihre Rechte als betroffene Person</h2>
+            <p>Ihnen stehen folgende Rechte zu:</p>
+            <ul>
+              <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
+              <li><strong>Berichtigung</strong> (Art. 16 DSGVO)</li>
+              <li><strong>Löschung</strong> (Art. 17 DSGVO)</li>
+              <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+              <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+              <li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li>
+              <li><strong>Widerruf einer Einwilligung</strong> (Art. 7 Abs. 3 DSGVO)</li>
+              <li><strong>Beschwerde bei einer Aufsichtsbehörde</strong> (Art. 77 DSGVO)</li>
+            </ul>
+
+            <h2>7. Datensicherheit</h2>
+            <p>Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten zu schützen. Beachten Sie allerdings, dass die Datenübertragung im Internet Sicherheitslücken aufweisen kann.</p>
+
+            <h2>8. Aktualität dieser Datenschutzerklärung</h2>
+            <p>Diese Datenschutzerklärung hat den Stand <strong>04. Februar 2026</strong>.</p>
+          </div>
+        </div>
+
+        <!-- ÖSTERREICH -->
+        <div class="country-content" id="content-at">
+          <div class="legal-content">
+            <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen – insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), des österreichischen Datenschutzgesetzes (DSG) sowie des Telekommunikationsgesetzes (TKG 2021).</p>
+
+            <h2>1. Verantwortlicher</h2>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website (gemäß Art. 4 Z 7 DSGVO) ist:</p>
+            <p><strong>ByteBakery UG (haftungsbeschränkt)</strong><br>
+            Leinsamenweg 114<br>
+            50933 Köln, Deutschland<br>
+            E-Mail: <a href="mailto:hallo@tobiaskutscher.com">hallo@tobiaskutscher.com</a></p>
+            <p>Da unser Unternehmen nach gesetzlichen Vorgaben keinen Datenschutzbeauftragten benennen muss, wenden Sie sich bei Fragen zum Datenschutz bitte direkt an uns.</p>
+
+            <h2>2. Bereitstellung der Website – Serverdaten/Hosting</h2>
+            <h3>Webhosting über Vercel</h3>
+            <p>Diese Website wird auf den Servern von Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, betrieben. Bei jedem Aufruf unserer Website werden automatisch folgende Daten durch Vercel verarbeitet:</p>
+            <ul>
+              <li>Datum und Uhrzeit des Seitenaufrufs</li>
+              <li>Die von Ihrem Gerät angefragte Webadresse (URL)</li>
+              <li>Die zuvor besuchte Seite (Referrer-URL)</li>
+              <li>Ihre IP-Adresse (in gekürzter/anonymisierter Form)</li>
+              <li>Informationen über Browser und Betriebssystem</li>
+            </ul>
+            <p>Wir haben mit Vercel einen Vertrag zur Auftragsverarbeitung abgeschlossen, der u.a. Standardvertragsklauseln gemäß Art. 46 DSGVO beinhaltet.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO in Verbindung mit § 165 Abs. 3 TKG 2021</p>
+
+            <h2>3. Kontaktaufnahme und E-Mail-Kommunikation</h2>
+            <p>Wenn Sie per E-Mail mit uns in Kontakt treten, werden Ihre Daten zum Zweck der Bearbeitung Ihrer Anfrage gespeichert.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung/-anbahnung) oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+            <h3>Newsletter/Informations-E-Mails</h3>
+            <p>Bei Newsletter-Anmeldung erheben wir Ihre E-Mail-Adresse und verwenden ggf. ein Double-Opt-In-Verfahren.</p>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
+
+            <h2>4. Cookies und ähnliche Technologien</h2>
+            <p>Unsere Website kommt <strong>ohne Cookies</strong> aus, die einer Zustimmung nach § 165 TKG 2021 bedürfen. Wir verwenden derzeit weder Tracking-Cookies noch andere nicht technisch notwendige Speicher-Technologien. Daher ist keine aktive Einwilligung durch ein Cookie-Banner notwendig.</p>
+
+            <h2>5. Webanalyse ohne Cookies (Vercel Analytics)</h2>
+            <p>Diese Website nutzt gegebenenfalls <strong>Vercel Web Analytics</strong>, einen Dienst zur Reichweitenmessung, der <strong>ohne Cookies</strong> auskommt. Alle erfassten Datenpunkte werden anonymisiert und nur als aggregierte Statistiken bereitgestellt.</p>
+            <p>Erhobene Daten:</p>
+            <ul>
+              <li>Besuchte Seite (URL) und Zeitpunkt</li>
+              <li>Herkunft des Aufrufs (Referrer-URL)</li>
+              <li>Gerätetyp, Betriebssystem, Browser, Bildschirmgröße</li>
+              <li>Grobe geografische Region (basierend auf anonymisierter IP-Adresse)</li>
+            </ul>
+            <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+            <h2>6. Ihre Rechte als betroffene Person</h2>
+            <p>Ihnen stehen gemäß DSGVO und DSG folgende Rechte zu:</p>
+            <ul>
+              <li><strong>Auskunft</strong> (Art. 15 DSGVO)</li>
+              <li><strong>Berichtigung</strong> (Art. 16 DSGVO)</li>
+              <li><strong>Löschung</strong> (Art. 17 DSGVO)</li>
+              <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+              <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+              <li><strong>Widerspruch</strong> (Art. 21 DSGVO)</li>
+              <li><strong>Widerruf der Einwilligung</strong> (Art. 7 Abs. 3 DSGVO)</li>
+              <li><strong>Beschwerde</strong> (Art. 77 DSGVO / § 24 DSG) – zuständig: Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien</li>
+            </ul>
+
+            <h2>7. Datensicherheit</h2>
+            <p>Wir treffen angemessene technische und organisatorische Maßnahmen zum Schutz Ihrer Daten. Bei der Datenübertragung über das Internet kann jedoch keine absolute Sicherheit garantiert werden.</p>
+
+            <h2>8. Änderungen dieser Datenschutzerklärung</h2>
+            <p>Diese Datenschutzerklärung hat den Stand <strong>04. Februar 2026</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <nav class="footer-links">
+          <a href="/methodik">Methodik</a>
+          <a href="/faq">FAQ</a>
+          <a href="/glossar">Glossar</a>
+          <a href="/ueber-uns">Über uns</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </nav>
+        <div class="footer-meta">© 2026 ByteBakery UG (haftungsbeschränkt)</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Header Menu Toggle
+    var headerMenuToggle = document.getElementById("headerMenuToggle");
+    var headerMenu = document.getElementById("headerMenu");
+    if (headerMenuToggle && headerMenu) {
+      headerMenuToggle.addEventListener("click", function () {
+        headerMenu.classList.toggle("open");
+      });
+    }
+
+    // Country Tabs
+    document.querySelectorAll('.country-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var country = this.dataset.country;
+
+        // Update tabs
+        document.querySelectorAll('.country-tab').forEach(function(t) {
+          t.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Update content
+        document.querySelectorAll('.country-content').forEach(function(c) {
+          c.classList.remove('active');
+        });
+        document.getElementById('content-' + country).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
