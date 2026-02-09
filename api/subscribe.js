@@ -36,7 +36,7 @@ export default async function handler(req, res) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const result = await resend.emails.send({
-          from: 'Mieten oder Kaufen <onboarding@resend.dev>',
+          from: 'Mieten oder Kaufen <noreply@tobiaskutscher.com>',
           to: 'hallo@tobiaskutscher.com',
           subject: `Neue Vormerkung: ${email}`,
           html: `
@@ -85,12 +85,13 @@ export default async function handler(req, res) {
       console.error('Blob storage error:', blobError.message || blobError);
     }
 
-    // Fail only if both methods failed
-    if (!emailSent && !blobSaved) {
-      return res.status(500).json({ error: 'Could not save lead' });
-    }
-
-    return res.status(200).json({ success: true, emailSent, blobSaved });
+    // Return success with debug info (temporarily for debugging)
+    return res.status(200).json({
+      success: true,
+      emailSent,
+      blobSaved,
+      hasApiKey: !!process.env.RESEND_API_KEY
+    });
   } catch (error) {
     console.error('Error processing lead:', error);
     return res.status(500).json({ error: 'Internal server error' });
