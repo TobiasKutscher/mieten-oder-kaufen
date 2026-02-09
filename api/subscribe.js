@@ -36,8 +36,8 @@ export default async function handler(req, res) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         const result = await resend.emails.send({
-          from: 'Mieten oder Kaufen <noreply@tobiaskutscher.com>',
-          to: 'hallo@tobiaskutscher.com',
+          from: 'Mieten oder Kaufen <onboarding@resend.dev>',
+          to: 'tobias-kutscher@web.de',
           subject: `Neue Vormerkung: ${email}`,
           html: `
             <h2>Neue Vormerkung auf mieten-oder-kaufen.de</h2>
